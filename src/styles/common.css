@@ -4,9 +4,7 @@
    - 타이포그래피
    - 버튼 스타일
 ======================================== */
-.faq-answer-text {
-  white-space: pre-line;
-}
+
 /* ========== 폰트 정의 ========== */
 @font-face {
   font-family: "PretendardGOV";
