@@ -1,0 +1,51 @@
+/* Simple Page Layout (LNB 없는 레이아웃) */
+.simple-page-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 페이지 컨테이너 */
+.simple-page-container {
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+}
+
+.simple-page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: calc(
+    100vh - 159px - 300px
+  ); /* viewport - (masthead+header) - footer */
+}
+
+/* 페이지 콘텐츠 영역 */
+.simple-page-content {
+  width: 100%;
+  background-color: #fff;
+}
+
+.simple-page-inner {
+  padding: 0 60px 80px;
+  min-height: 600px;
+}
+
+/* 페이지 본문 */
+.simple-page-body {
+  /* 여기에 실제 콘텐츠가 들어갑니다 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 1024px) {
+  .simple-page-inner {
+    padding: 0 20px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .simple-page-inner {
+    padding: 0 16px 40px;
+  }
+}

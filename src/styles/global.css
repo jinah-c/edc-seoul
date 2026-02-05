@@ -1,0 +1,84 @@
+/* 전역 스타일 및 유틸리티 */
+
+/* 최소 디바이스 사이즈 */
+body {
+  min-width: 320px;
+}
+
+/* 페이지 전환 애니메이션 */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 이미지 로딩 최적화 */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 이미지 플레이스홀더 방지 */
+img:not([src]) {
+  visibility: hidden;
+}
+
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 하드웨어 가속 활성화 */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 반응형 헬퍼 클래스 */
+.pc {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .pc {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+/* 헤더 */
+.header {
+  position: relative;
+  z-index: 999;
+}
+
+/* 레이아웃 컨테이너 */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.content-wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}

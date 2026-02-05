@@ -1,0 +1,92 @@
+/* Masthead */
+.masthead {
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-600);
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  transition: transform 0.3s ease-in-out;
+}
+
+.masthead-hidden {
+  transform: translateY(-100%);
+}
+
+/* 모바일 메뉴 열렸을 때는 z-index로만 처리 */
+
+.masthead-container {
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.masthead-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.masthead-logo img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+}
+
+.masthead-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.masthead-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.masthead-link:hover {
+  opacity: 0.8;
+}
+
+/* 모바일 */
+@media (max-width: 1024px) {
+  /* 모바일에서는 masthead 항상 고정 */
+  .masthead {
+    transform: none !important;
+    z-index: 101;
+    height: 32px;
+  }
+
+  .masthead-hidden {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead-container {
+    padding: 0 10px;
+    justify-content: flex-start;
+  }
+
+  .masthead-logo {
+    display: none;
+  }
+
+  .masthead-nav {
+    gap: 16px;
+  }
+
+  .masthead-link {
+    font-size: 13px;
+  }
+}

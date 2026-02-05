@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: "PretendardGOV", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "PretendardGOV", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--gray-700);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* 마우스 클릭 시에는 outline 제거 */
+a:focus,
+.form-control:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
+
+/* 키보드 포커스 시에만 outline 표시 */
+a:focus-visible,
+.form-control:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px dotted var(--primary-400);
+  outline-offset: 2px;
+}
+
+/* \n 줄바꿈 */
+.faq-answer-text {
+  white-space: pre-line;
+}

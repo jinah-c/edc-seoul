@@ -1,0 +1,403 @@
+/* ========================================
+   공통 스타일 (Common Styles)
+   - 폰트 정의
+   - 타이포그래피
+   - 버튼 스타일
+======================================== */
+.faq-answer-text {
+  white-space: pre-line;
+}
+/* ========== 폰트 정의 ========== */
+@font-face {
+  font-family: "PretendardGOV";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../assets/fonts/PretendardGOV-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PretendardGOV";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../assets/fonts/PretendardGOV-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PretendardGOV";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../assets/fonts/PretendardGOV-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PretendardGOV";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../assets/fonts/PretendardGOV-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PretendardGOV";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../assets/fonts/PretendardGOV-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* 폰트 굵기 유틸리티 클래스 */
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* ========== 반응형 타이포그래피 ========== */
+
+h1 {
+  font-size: clamp(40px, 12vw, 68px);
+  line-height: 130%;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(36px, 11vw, 60px);
+  line-height: 140%;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: clamp(30px, 10vw, 52px);
+  line-height: 140%;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: clamp(28px, 9vw, 44px);
+  line-height: 140%;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: clamp(24px, 8vw, 38px);
+  line-height: 140%;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: clamp(20px, 7vw, 30px);
+  line-height: 140%;
+  font-weight: 500;
+}
+
+p {
+  font-size: clamp(15px, 1rem, 16px);
+  line-height: 150%;
+  font-weight: 400;
+}
+
+span {
+  font-size: clamp(14px, 0.875rem, 15px);
+  line-height: 140%;
+  font-weight: 400;
+}
+
+b {
+  font-weight: 500;
+}
+
+/* 텍스트 유틸리티 클래스 */
+.txt {
+  font-size: clamp(15px, 1rem, 16px);
+  line-height: 150%;
+  font-weight: 400;
+}
+
+.stxt {
+  font-size: clamp(14px, 0.875rem, 15px);
+  line-height: 150%;
+  font-weight: 400;
+}
+
+/* 페이지 타이틀 */
+.page-title {
+  font-size: clamp(23px, 1.5vw + 18px, 29px);
+  font-weight: 500;
+  color: var(--gray-600);
+  margin: 0 0 28px 0;
+  text-align: left;
+}
+
+.page-title.center {
+  text-align: center;
+}
+
+/* 데코레이션 타이틀 */
+.deco-title1,
+.deco-title2,
+.deco-title3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.deco-title1::before,
+.deco-title2::before,
+.deco-title3::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../assets/images/star01.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* deco-title1 - 가장 큰 사이즈 */
+.deco-title1 {
+  font-size: clamp(23px, 2vw + 20px, 28px);
+}
+
+.deco-title1::before {
+  width: clamp(20px, 2vw + 16px, 24px);
+  height: clamp(20px, 2vw + 16px, 24px);
+}
+
+/* deco-title2 - 중간 사이즈 */
+.deco-title2 {
+  font-size: clamp(21px, 1.8vw + 17px, 24px);
+}
+
+.deco-title2::before {
+  width: clamp(18px, 1.5vw + 14px, 20px);
+  height: clamp(18px, 1.5vw + 14px, 20px);
+}
+
+/* deco-title3 - 작은 사이즈 */
+.deco-title3 {
+  font-size: clamp(18px, 1.2vw + 14px, 20px);
+}
+
+.deco-title3::before {
+  width: clamp(16px, 1.2vw + 13px, 18px);
+  height: clamp(16px, 1.2vw + 13px, 18px);
+}
+
+/* text-description */
+.text-description {
+  font-size: clamp(15px, 1rem, 16px);
+  line-height: 150%;
+  color: var(--gray-600);
+  text-align: center;
+}
+
+.text-description.login {
+  font-size: clamp(16px, 1.1vw + 14px, 17px);
+}
+
+.text-description span {
+  font-size: inherit;
+}
+
+.text-primary {
+  color: var(--primary-600);
+  font-weight: 500;
+}
+.text-accent {
+  color: var(--accent-600);
+  font-weight: 500;
+}
+
+/* ========== 버튼 스타일 ========== */
+
+/* 
+<button className="btn btn-secondary btn-lg">secondary</button>
+<button className="btn btn-line primary btn-xs">우편번호</button>
+<button className="btn btn-line btn-xs">삭제</button>
+<button className="btn btn-line red btn-xs">취소</button>
+<button className="btn btn-gray red btn-md">신청서다운로드
+  <FontAwesomeIcon icon={faDownload} />
+</button>
+*/
+
+/* 기본 버튼 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  gap: 4px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary 버튼 */
+.btn-primary {
+  background-color: var(--primary-600);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-700);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.192);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary 버튼 */
+.btn-secondary {
+  background-color: var(--gray-600);
+  color: var(--gray-50);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--gray-800);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(15, 16, 16, 0.144);
+}
+
+/* cancel  버튼 */
+
+.btn-cancel {
+  background-color: #fff;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: var(--gray-100);
+  border-color: var(--gray-100);
+  box-shadow: 0 4px 8px rgba(15, 16, 16, 0.144);
+}
+
+/* line 버튼 */
+
+.btn-line {
+  background-color: #fff;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-700);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-line:hover:not(:disabled) {
+  background-color: var(--gray-100);
+  box-shadow: 0 2px 4px rgba(15, 16, 16, 0.144);
+}
+
+.btn-line.primary {
+  border-color: var(--primary-700);
+  color: var(--primary-700);
+}
+
+.btn-line.primary:hover:not(:disabled) {
+  background-color: var(--primary-70);
+}
+
+.btn-line.red {
+  border-color: var(--accent-500);
+  color: var(--accent-600);
+}
+
+.btn-line.red:hover:not(:disabled) {
+  background-color: var(--accent-50);
+}
+
+/* gray 버튼 */
+.btn-gray {
+  background-color: var(--gray-50);
+  color: var(--gray-600);
+}
+
+.btn-gray:hover:not(:disabled) {
+  background-color: var(--primary-600);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(15, 16, 16, 0.144);
+}
+
+/* 버튼 크기 */
+
+.btn-xs {
+  padding: 4px 14px;
+  font-size: 14px;
+  height: 38px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 15px;
+  height: 42px;
+}
+
+.btn-md {
+  padding: 10px 24px;
+  font-size: 15px;
+  height: 48px;
+}
+
+.btn-lg {
+  padding: 10px 34px;
+  font-size: 16px;
+  height: 56px;
+  border-radius: 8px;
+}
+
+/* 전체 너비 버튼 */
+.btn-block {
+  width: 100%;
+}
+
+/* ========== 모바일 반응형 ========== */
+@media (max-width: 768px) {
+  .page-title {
+    margin-bottom: 14px;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+
+  .btn-sm {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .btn-md {
+    font-size: 14px;
+    height: 46px;
+  }
+
+  .btn-lg {
+    font-size: 15px;
+    height: 52px;
+  }
+}

@@ -1,0 +1,198 @@
+/* Footer 스타일 */
+.footer {
+  width: 100%;
+  background-color: #f6f6fa;
+  border-top: 1px solid var(--line-50);
+  padding: 0 0 40px;
+  margin-top: 80px;
+}
+
+/* Footer 내부 container는 배경색 제거 */
+.footer .container {
+  background-color: transparent;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* 왼쪽 영역 */
+.footer-left {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-100);
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 10px;
+}
+
+.footer-link:first-child {
+  font-weight: 700;
+}
+
+.footer-link:hover {
+  color: var(--primary-600);
+}
+
+.footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-logo img {
+  width: 140px;
+  height: auto;
+}
+
+.footer-info {
+  flex: 1;
+}
+
+.footer-address,
+.footer-contact,
+.footer-notice {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin-bottom: 8px;
+}
+
+.footer-contact {
+  margin-bottom: 4px;
+}
+
+.footer-notice {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 24px;
+}
+
+/* 오른쪽 영역 - 다산콜재단 */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.dasan-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dasan-logo img {
+  height: 80px;
+  width: auto;
+}
+
+.dasan-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dasan-text p {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 767px) {
+  .footer {
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-links {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .footer-logo img {
+    width: 140px;
+  }
+
+  .footer-address,
+  .footer-contact,
+  .footer-notice {
+    font-size: 14px;
+  }
+
+  .footer-notice {
+    font-size: 13px;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
+  }
+
+  .footer-right {
+    justify-content: flex-start;
+  }
+
+  .dasan-logo {
+    gap: 10px;
+  }
+
+  .dasan-logo img {
+    height: 60px;
+  }
+
+  .dasan-text p {
+    font-size: 11px;
+  }
+}
+
+/* 태블릿 반응형 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer-content {
+    gap: 30px;
+  }
+
+  .dasan-logo img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 414px) {
+  .footer-links {
+    /* flex-direction: column; */
+    gap: 0;
+  }
+}

@@ -1,0 +1,297 @@
+/* Cases Section */
+.cases-section {
+  width: 100%;
+  background-color: var(--primary-50);
+  padding: 80px 0;
+}
+
+/* 헤더 */
+.cases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+/* 데코 아이콘 */
+.cases-header::after {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  right: -20px;
+  width: 166px;
+  height: 140px;
+  background-image: url(/src/assets/images/book-deco.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.cases-header-content {
+  flex: 1;
+}
+
+.cases-description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.cases-description p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* 데코 아이콘 */
+.cases-deco {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 카드 그리드 */
+.cases-grid {
+  background-color: #fff;
+  border: 1px solid var(--line-100);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 40px;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  z-index: 1;
+}
+
+/* 카드 */
+.case-card {
+  background-color: #fff;
+  padding: 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-right: 1px solid var(--line-100);
+  border-bottom: 1px solid var(--line-100);
+  transition: all 0.3s ease;
+}
+
+/* 3컬럼 마지막 아이템의 오른쪽 보더 제거 */
+.case-card:nth-child(3n) {
+  border-right: none;
+}
+
+/* 마지막 줄의 하단 보더 제거 */
+.case-card:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.case-card:hover .case-title {
+  color: var(--primary-600);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.case-card:hover .case-category {
+  color: var(--primary-600);
+}
+
+.case-card:hover .case-date {
+}
+
+/* 카테고리 라벨 */
+.case-category {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 6px 6px;
+  background-color: #ecf9fd;
+  color: var(--gray-600);
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+  transition: color 0.3s;
+  line-height: 100%;
+}
+
+/* 제목 */
+.case-title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--gray-700);
+  margin: 0;
+  flex: 1;
+
+  /* 3줄 제한 + 말줄임표 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s;
+}
+
+/* 날짜 */
+.case-date {
+  font-size: 14px;
+  color: var(--gray-500);
+  text-align: right;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+/* 더보기 버튼 */
+.cases-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.cases-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-500);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cases-more-btn:hover {
+  border-color: var(--primary-600);
+  color: var(--primary-600);
+  background-color: #fff;
+}
+
+.cases-more-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .cases-section {
+    padding: 60px 0;
+  }
+
+  .cases-description p {
+    font-size: 16px;
+  }
+
+  .cases-header::after {
+    width: 150px;
+    height: 115px;
+    bottom: -74px;
+    right: 0px;
+  }
+
+  .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cases-card {
+    padding: 24px;
+  }
+
+  /* 2컬럼일 때 보더 조정 */
+  .case-card:nth-child(3n) {
+    border-right: 1px solid var(--line-100);
+  }
+
+  .case-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  /* 마지막 줄의 하단 보더 제거 (2컬럼) */
+  .case-card:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--line-100);
+  }
+
+  .case-card:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .cases-section {
+    padding: 50px 0;
+  }
+
+  .cases-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cases-header::after {
+    width: 100px;
+    height: 100px;
+    bottom: -92px;
+    right: 0px;
+  }
+
+  .cases-description p {
+    font-size: 15px;
+  }
+
+  .cases-grid {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  /* 1컬럼일 때 보더 조정 */
+  .case-card:nth-child(3n),
+  .case-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  /* 마지막 아이템만 하단 보더 제거 */
+  .case-card:nth-last-child(-n + 3),
+  .case-card:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--line-100);
+  }
+
+  .case-card:last-child {
+    border-bottom: none;
+  }
+
+  .case-card {
+    padding: 20px 8px;
+    border-right: 0;
+  }
+
+  .case-title {
+    font-size: 14px;
+  }
+
+  .case-date {
+    font-size: 13px;
+  }
+
+  .cases-more-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  .cases-more-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+}

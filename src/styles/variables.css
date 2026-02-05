@@ -1,0 +1,90 @@
+:root {
+  /* ========== Breakpoints (참고용) ========== */
+  /*
+   * Mobile First 기준
+   * --bp-mobile:    0px ~ 767px    (모바일)
+   * --bp-tablet:    768px ~ 1023px (태블릿)
+   * --bp-desktop:   1024px ~ 1439px (데스크탑)
+   * --bp-wide:      1440px ~        (와이드 데스크탑)
+   *
+   * Media Query 사용 예시:
+   * @media (min-width: 768px) { } - 태블릿 이상
+   * @media (min-width: 1024px) { } - 데스크탑 이상
+   * @media (min-width: 1440px) { } - 와이드 이상
+   * @media (max-width: 767px) { } - 모바일만
+   * @media (max-width: 1023px) { } - 태블릿 이하
+   */
+
+  /* ========== Layout Widths ========== */
+  --max-width: 1200px;
+  --content-width: 1200px;
+  --tablet-padding: 0px;
+  --mobile-padding: 0px;
+
+  /* ========== Uncategorized Colors ========== */
+  --point-color: #7de1cf;
+  --line-50: #eef2f5;
+  --line-100: #dcdee6;
+
+  /* ========== Gray Scale ========== */
+  --gray-50: #f8f8f8;
+  --gray-100: #eeeeee;
+  --gray-200: #dddddd;
+  --gray-300: #cacaca;
+  --gray-400: #a9a9a9;
+  --gray-500: #7b7b7b;
+  --gray-600: #555555;
+  --gray-700: #3b3b3b;
+  --gray-800: #161321;
+
+  /* ========== Primary Colors ========== */
+  --primary-50: #f6fafc;
+  --primary-70: #e8f3fc;
+  --primary-100: #ddeefb;
+  --primary-200: #c5e2f7;
+  --primary-300: #a9d5f6;
+  --primary-400: #88c4f1;
+  --primary-500: #52a7e8;
+  --primary-600: #188ae0;
+  --primary-700: #0a6fbb;
+  --primary-800: #0c5d9c;
+  --primary-900: #154366;
+
+  /* ========== Accent Colors ========== */
+  --accent-50: #fef5f7;
+  --accent-70: #fbe5eb;
+  --accent-100: #f8cbd8;
+  --accent-200: #f6b6c8;
+  --accent-300: #f4a5bb;
+  --accent-400: #f18faa;
+  --accent-500: #ee7698;
+  --accent-600: #e9527c;
+  --accent-700: #e33465;
+  --accent-800: #a9244a;
+  --accent-900: #8a1539;
+
+  /* ========== Primary(2) Colors ========== */
+  --primary2-30: #f9f7ff;
+  --primary2-50: #f2f4ff;
+  --primary2-100: #c7c7fe;
+  --primary2-200: #c29bfe;
+  --primary2-300: #aa8bfe;
+  --primary2-400: #9777ff;
+  --primary2-500: #7d56fd;
+  --primary2-600: #7d5cc8;
+  --primary2-700: #694ab8;
+  --primary2-800: #453880;
+  --primary2-900: #32266a;
+
+  /* ========== Secondary Colors ========== */
+  --secondary-50: #eaf2fd;
+  --secondary-100: #d6e7f9;
+  --secondary-200: #a7cef3;
+  --secondary-300: #7ab4e8;
+  --secondary-400: #499dd3;
+  --secondary-500: #2b70f9;
+  --secondary-600: #1d5ea6;
+  --secondary-700: #1f5b45;
+  --secondary-800: #0a4a81;
+  --secondary-900: #053466;
+}

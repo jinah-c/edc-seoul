@@ -1,0 +1,5 @@
+/* 모든 스타일을 한 곳에서 import */
+@import "./variables.css";
+@import "./reset.css";
+@import "./common.css";
+@import "./global.css";

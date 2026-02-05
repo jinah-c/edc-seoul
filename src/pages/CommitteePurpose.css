@@ -1,0 +1,123 @@
+/* Committee Purpose Page */
+.purpose-page {
+  max-width: 900px;
+}
+
+.purpose-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px 10px;
+}
+
+.purpose-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.purpose-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+.purpose-subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--primary-600);
+}
+
+.purpose-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.purpose-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-700);
+  padding-left: 24px;
+  position: relative;
+}
+
+.purpose-list li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: var(--primary-600);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* 표 스타일 */
+.purpose-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.purpose-table th,
+.purpose-table td {
+  padding: 20px 24px;
+  border: 1px solid #e8eff2;
+}
+
+.purpose-table th {
+  background-color: #effaf9;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray-700);
+  width: 150px;
+}
+
+.purpose-table td {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray-700);
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .purpose-content {
+    gap: 40px;
+    padding: 0;
+  }
+
+  .purpose-subtitle {
+    font-size: 20px;
+    padding-left: 10px;
+    border-left-width: 3px;
+  }
+
+  .purpose-section {
+    gap: 10px;
+  }
+  .purpose-section p,
+  .purpose-list li {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .purpose-table th,
+  .purpose-table td {
+    padding: 16px 16px;
+    font-size: 14px;
+  }
+
+  .purpose-table th {
+    width: 100px;
+  }
+}

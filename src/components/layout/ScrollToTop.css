@@ -1,0 +1,81 @@
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: -80px; /* 화면 아래 바깥쪽에 숨김 */
+  right: 26px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(100, 100, 100, 0.8);
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.scroll-to-top.visible {
+  bottom: 30px; /* 화면에 나타남 */
+  opacity: 1;
+}
+
+.scroll-to-top svg {
+  font-size: 16px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--gray-700);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-1px);
+}
+
+/* 반응형: 1400px 이상이고 높이 981px 이상일 때 숨김 (기존 FloatingMenu의 TOP 버튼 사용) */
+@media (min-width: 1400px) and (min-height: 981px) {
+  .scroll-to-top {
+    display: none;
+  }
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+  }
+
+  .scroll-to-top.visible {
+    bottom: 20px;
+  }
+
+  .scroll-to-top svg {
+    font-size: 14px;
+  }
+
+  .scroll-to-top span {
+    font-size: 10px;
+  }
+}
