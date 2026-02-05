@@ -142,3 +142,4 @@ import Container from '@/components/layout/Container';
 .pc        /* 데스크탑(1024px 이상)에서만 표시 */
 .mobile    /* 모바일에서만 표시 */
 ```
+# edc-seoul
