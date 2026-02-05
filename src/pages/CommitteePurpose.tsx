@@ -1,5 +1,4 @@
 import SubPageLayout from "../components/layout/SubPageLayout";
-import "./CommitteePurpose.css";
 
 const CommitteePurpose = () => {
   // Breadcrumb 데이터
@@ -24,7 +23,7 @@ const CommitteePurpose = () => {
       lnbMenuItems={lnbMenuItems}
       activeLnbId="purpose"
     >
-      <div className="purpose-page">
+      <div className="r-content-wp">
         <h1 className="page-title">위원회 설립목적</h1>
 
         <div className="page-notice">
@@ -52,8 +51,8 @@ const CommitteePurpose = () => {
           </ul>
         </div>
 
-        <div className="purpose-content">
-          <section className="purpose-section">
+        <div className="r-content">
+          <section className="txt-section">
             <h3 className="deco-title3">설치목적</h3>
             <p>
               환경오염 피해로 인한 분쟁을 간편한 절차로 공정하고 효율적으로
@@ -62,7 +61,7 @@ const CommitteePurpose = () => {
             </p>
           </section>
 
-          <section className="purpose-section">
+          <section className="txt-section">
             <h3 className="deco-title3">기능</h3>
             <p>
               서울특별시 관할구역 안에서 발생하는 환경분쟁의
@@ -71,7 +70,7 @@ const CommitteePurpose = () => {
             </p>
           </section>
 
-          <section className="purpose-section">
+          <section className="txt-section">
             <h3 className="deco-title3">구성</h3>
             <p>
               서울특별시 관할구역 안에서 발생하는 환경분쟁의
@@ -79,7 +78,7 @@ const CommitteePurpose = () => {
               지방자치단체를 당사자로 하지 않는 분쟁의 조정)
             </p>
 
-            <table className="purpose-table">
+            <table className="table-b">
               <tbody>
                 <tr>
                   <th>위원장</th>

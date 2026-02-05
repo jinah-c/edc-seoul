@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SimplePageLayout from "../components/layout/SimplePageLayout";
-import loginIcon from "../assets/images/login2-icon.png";
-import "../styles/login.css";
+import SimplePageLayout from "../../components/layout/SimplePageLayout";
+import loginIcon from "../../assets/images/login2-icon.png";
+import "./login.css";
 
 const CommitteeLogin = () => {
   const [userId, setUserId] = useState("");

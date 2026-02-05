@@ -11,8 +11,10 @@
 .floating-menu-container {
   background-color: #fff;
   border-radius: 16px 0 0 16px;
-  box-shadow: 0 4px 20px rgb(33 33 45 / 15%);
+  box-shadow: 0 4px 20px rgb(33 33 45 / 7%);
   overflow: hidden;
+  border: 1px solid #f0f0f0;
+  border-right: none;
 }
 
 /* 메뉴 아이템 */
@@ -69,7 +71,7 @@
   gap: 4px;
   padding: 16px;
   width: 100%;
-  background-color: var(--primary-50);
+  background-color: var(--primary-100);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;

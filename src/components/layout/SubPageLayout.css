@@ -29,13 +29,8 @@
 }
 
 .subpage-inner {
-  padding: 0 60px 80px;
+  padding: 0 16px 80px 54px;
   min-height: 600px;
-}
-
-/* 페이지 본문 */
-.subpage-body {
-  /* 여기에 실제 콘텐츠가 들어갑니다 */
 }
 
 /* Page Header (Breadcrumb + Actions) */

@@ -270,14 +270,13 @@
 
   .notices-tabs {
     width: 100%;
-    gap: 0;
-    justify-content: space-between;
+    gap: 4px;
     row-gap: 4px;
   }
 
   .notices-tab {
-    font-size: 15px;
-    padding: 7px 6px;
+    font-size: 16px;
+    padding: 7px 8px;
     letter-spacing: -0.02rem;
   }
 
@@ -311,5 +310,15 @@
 
   .notice-date {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 437px) {
+  .notices-tabs {
+    gap: 2px;
+    padding: 7px 4px;
+  }
+  .notices-tab {
+    font-weight: 15px;
   }
 }

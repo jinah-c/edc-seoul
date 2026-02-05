@@ -1,6 +1,6 @@
-import SimplePageLayout from "../components/layout/SimplePageLayout";
-import loginIcon from "../assets/images/login-icon.png";
-import "../styles/login.css";
+import SimplePageLayout from "../../components/layout/SimplePageLayout";
+import loginIcon from "../../assets/images/login-icon.png";
+import "./login.css";
 
 const Login = () => {
   // Breadcrumb 데이터

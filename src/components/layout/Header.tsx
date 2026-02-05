@@ -101,7 +101,7 @@ const Header = () => {
       description: "환경피해 분쟁의 신속하고 공정한 해결",
       image: submenuImg01,
       subMenus: [
-        { id: 1, label: "제도안내", url: "#" },
+        { id: 1, label: "제도안내", url: "/env/info" },
         { id: 2, label: "분쟁조정 사례", url: "#" },
         { id: 3, label: "조정신청 FAQ", url: "#" },
         { id: 4, label: "인터넷상담", url: "#" },
