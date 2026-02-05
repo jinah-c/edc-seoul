@@ -9,7 +9,7 @@ import ScrollToTopButton from "./components/layout/ScrollToTop";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/edc-seoul">
       <ScrollToTop />
       <ScrollToTopButton />
       <Routes>
