@@ -104,7 +104,7 @@ const MainVisual = () => {
               <button
                 type="button"
                 className="main-visual-primary"
-                onClick={() => handleNavigate("#")}
+                onClick={() => handleNavigate("/mypage/my-dispute")}
               >
                 나의 분쟁조정
               </button>

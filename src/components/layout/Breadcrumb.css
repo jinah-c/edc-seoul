@@ -34,13 +34,16 @@
   cursor: pointer;
 }
 
-.breadcrumb-link:not([disabled]):hover {
-  color: var(--gray-500);
-  cursor: auto;
+.breadcrumb-link:hover {
+  color: var(--gray-800);
+  /* text-decoration: underline; */
+  /* text-underline-offset: 3px; */
 }
 
-.breadcrumb-link:hover {
-  color: var(--primary-600);
+.breadcrumb-link[disabled],
+.breadcrumb-link[disabled]:hover {
+  color: var(--gray-500);
+  cursor: default;
 }
 
 .breadcrumb-home-icon {

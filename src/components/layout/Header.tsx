@@ -165,7 +165,7 @@ const Header = () => {
     if (type === "login") {
       navigate("/login");
     } else if (type === "mypage") {
-      console.log("mypage clicked");
+      navigate("/mypage/my-dispute");
     }
   };
 

@@ -1,6 +1,7 @@
 import SubPageLayout from "../../components/layout/SubPageLayout";
 import envImage01W from "../../assets/images/env01_img_w.png";
 import envImage01M from "../../assets/images/env01_img_m.png";
+import "./Env.css";
 
 const Env01 = () => {
   // Breadcrumb 데이터

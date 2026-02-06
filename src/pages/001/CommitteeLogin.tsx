@@ -1,6 +1,8 @@
 import { useState } from "react";
 import SimplePageLayout from "../../components/layout/SimplePageLayout";
 import loginIcon from "../../assets/images/login2-icon.png";
+import eyeOpenIcon from "../../assets/images/EyeOpen.png";
+import eyeClosedIcon from "../../assets/images/EyeClosed.png";
 import "./login.css";
 
 const CommitteeLogin = () => {
@@ -65,7 +67,10 @@ const CommitteeLogin = () => {
                     onClick={() => setShowPassword(!showPassword)}
                     aria-label="비밀번호 표시/숨김"
                   >
-                    {showPassword ? "👁️" : "👁️‍🗨️"}
+                    <img
+                      src={showPassword ? eyeOpenIcon : eyeClosedIcon}
+                      alt={showPassword ? "비밀번호 표시" : "비밀번호 숨김"}
+                    />
                   </button>
                 </div>
               </div>

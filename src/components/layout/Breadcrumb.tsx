@@ -29,7 +29,10 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
   return (
     <nav className="breadcrumb" aria-label="breadcrumb">
       <ol className="breadcrumb-list">
-        {items.map((item, index) => (
+        {items.map((item, index) => {
+          const isDisabled = !item.url || item.url === "#";
+
+          return (
           <li key={index} className="breadcrumb-item">
             {index < items.length - 1 ? (
               <>
@@ -37,6 +40,8 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
                   className={`breadcrumb-link ${index === 0 ? "home" : ""}`}
                   onClick={() => handleClick(item.url)}
                   aria-label={index === 0 ? "홈으로 이동" : item.label}
+                  disabled={isDisabled}
+                  aria-disabled={isDisabled}
                 >
                   {index === 0 ? (
                     <img
@@ -56,7 +61,8 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
               <span className="breadcrumb-current">{item.label}</span>
             )}
           </li>
-        ))}
+          );
+        })}
       </ol>
     </nav>
   );
