@@ -45,13 +45,13 @@ const My01 = () => {
           {/* 내역 없을 시 노출 */}
           {/* <div className="no-history">신청하신 분쟁조정내역이 없습니다.</div> */}
 
-          <table className="table-d">
-            <thead>
+          <table className="tableD">
+            <thead className="h140">
               <tr>
                 <th colSpan={4}>
                   <div className="table-d-head">
                     <span className="table-d-title">알선</span>
-                    <div className="table-d-actions">
+                    <div className="tableRbtnWp">
                       <button type="button" className="btn btn-line red btn-sm">
                         취소하기
                       </button>
@@ -70,7 +70,7 @@ const My01 = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="h140">
               <tr>
                 <th>신청일</th>
                 <td>2026-01-28</td>
@@ -121,13 +121,13 @@ const My01 = () => {
             </tbody>
           </table>
 
-          <table className="table-d">
-            <thead>
+          <table className="tableD">
+            <thead className="h140">
               <tr>
                 <th colSpan={4}>
                   <div className="table-d-head">
                     <span className="table-d-title">조정신청</span>
-                    <div className="table-d-actions">
+                    <div className="tableRbtnWp">
                       <button type="button" className="btn btn-line red btn-sm">
                         취소하기
                       </button>
@@ -146,7 +146,7 @@ const My01 = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="h140">
               <tr>
                 <th>신청일</th>
                 <td>2026-01-28</td>

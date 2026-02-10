@@ -75,45 +75,45 @@ const Env01 = () => {
           <section className="txt-section">
             <h3 className="deco-title2">조정(調整)의 종류?</h3>
 
-            <table className="table-c">
+            <table className="tableC">
               <thead>
                 <tr>
-                  <th>구분</th>
+                  <th className="w140 tac">구분</th>
                   <th>정의</th>
-                  <th>처리기간</th>
+                  <th className="w120 tac">처리기간</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="">
                 <tr>
-                  <td>합의(合意)</td>
+                  <td className="tac">합의(合意)</td>
                   <td>
                     당사자의 자리를 주선하여 분쟁당사자간의 합의를 유도하는 절차
                   </td>
-                  <td>2월</td>
+                  <td className="tac">2월</td>
                 </tr>
                 <tr>
-                  <td>조정(調整)</td>
+                  <td className="tac">조정(調整)</td>
                   <td>
                     사실조사 후 조정위원회가 조정안을 작성하여 당사자간의 합의를
                     촉진 권고하는 절차
                   </td>
-                  <td>7월</td>
+                  <td className="tac">7월</td>
                 </tr>
                 <tr>
-                  <td>재정(裁定)</td>
+                  <td className="tac">재정(裁定)</td>
                   <td>
                     사실조사 및 당사자 심문 후 재정위원회가 피해배상처분을
                     종합하는 손실처분 절차
                   </td>
-                  <td>7월</td>
+                  <td className="tac">7월</td>
                 </tr>
                 <tr>
-                  <td>중재(仲裁)</td>
+                  <td className="tac">중재(仲裁)</td>
                   <td>
                     당사자간의 합의로 분쟁의 원인이 재판이 아닌 중재위원회의
                     판정에 의하여 해결하는 절차
                   </td>
-                  <td>7월</td>
+                  <td className="tac">7월</td>
                 </tr>
               </tbody>
             </table>

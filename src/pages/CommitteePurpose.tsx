@@ -78,7 +78,7 @@ const CommitteePurpose = () => {
               지방자치단체를 당사자로 하지 않는 분쟁의 조정)
             </p>
 
-            <table className="table-b">
+            <table className="tableB">
               <tbody>
                 <tr>
                   <th>위원장</th>
