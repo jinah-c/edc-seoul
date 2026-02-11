@@ -103,6 +103,15 @@
   color: var(--gray-600);
 }
 
+.indentHyphen{
+    margin-top: 6px;
+    margin-bottom: 2px;
+    padding-left: 12px; /* 들여쓰기 너비 */
+    text-indent: -10px; /* 첫 줄을 다시 앞으로 */
+}
+
+
+
 /* 텍스트 강조 컬러 */
 .page-notice span {
   font-size: inherit;

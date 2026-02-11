@@ -1,0 +1,265 @@
+/* Dma Page Styles */
+
+.dma-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.dma-content .page-notice{
+  margin-bottom: 0;
+}
+
+/* 빠른 이동 카드 (moveQuickWp) */
+.moveQuickWp {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.cardItem {
+  flex: 1;
+  padding: 0;
+  list-style: none;
+}
+
+/* 카드 버튼 */
+.card-button {
+  width: 100%;
+  border: 1px solid var(--line-100);
+  border-radius: 18px;
+  padding: 30px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  height: -webkit-fill-available;
+}
+
+/* 포커스 상태 (키보드 네비게이션) */
+.card-button:focus {
+  outline: 2px solid var(--primary-600);
+  outline-offset: 2px;
+}
+
+.card-button::after,
+.card-button::before {
+  transition: all 0.2s ease;
+}
+
+.card-button::after{
+  content: "↗";
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 19px;
+  color: var(--point-color);
+  font-weight: bold;
+  z-index: 2;
+  opacity: 0;
+}
+
+.card-button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 50px 0;
+  border-color: transparent var(--primary-600) transparent transparent;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+}
+
+.card-button:hover,
+.card-button:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-600);
+}
+
+/* 호버 상태: 우측상단에 파란 배지 + 위로가는 화살표 아이콘 */
+.card-button:hover::after,
+.card-button:focus::after {
+  opacity: 1;
+
+}
+
+.card-button:hover::before,
+.card-button:focus::before {
+  opacity: 1;
+
+}
+
+/* 액티브 상태 */
+.card-button:active {
+  transform: scale(0.98);
+}
+
+/* 카드 이미지 */
+.card-image {
+  width:64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 카드 콘텐츠 */
+.card-content {
+  width: 100%;
+}
+
+.card-title {
+  font-size: var(--font-large);
+  font-weight: 600;
+  color: var(--gray-600);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.card-description {
+  font-size: var(--font-small);
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Skip to main content 링크 (접근성) */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-600);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .dma-content {
+    gap: 40px;
+  }
+
+  .moveQuickWp {
+    gap: 15px;
+  }
+
+  .card-button {
+    padding: 20px 15px;
+  }
+
+  .card-image {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  /* 호버 배지 모바일에서는 작게 */
+  .card-button:hover::after,
+  .card-button:focus::after {
+    font-size: 18px;
+  }
+
+  .card-button:hover::before,
+  .card-button:focus::before {
+    border-width: 0 46px 46px 0;
+  }
+}
+
+
+@media (max-width: 620px) {
+  .moveQuickWp{
+    flex-direction: column;
+  }
+
+  .card-button{
+    flex-direction: row;
+    padding: 20px 30px;
+    gap: 24px;
+  }
+
+  .card-content{
+    text-align: left;
+  }
+
+  .card-title{
+    margin-bottom: 6px;
+  }
+
+  .card-image{
+    min-width: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-button{
+    padding: 20px;
+    gap: 17px;
+  }
+}
+/* 고대비 모드 지원 */
+@media (prefers-contrast: more) {
+  .card-button {
+    border-width: 2px;
+  }
+
+  .card-button:focus {
+    outline-width: 3px;
+  }
+}
+
+/* 운동 감소 모드 지원 */
+@media (prefers-reduced-motion: reduce) {
+  .dma-content {
+    animation: none;
+  }
+
+  .card-button {
+    transition: none;
+  }
+
+  .card-button:active {
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 카드 타이틀 강조 텍스트 (em 태그) */
+.card-title em {
+  color: var(--primary-600);
+  font-style: normal;
+  font-weight: inherit;
+}

@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import FloatingMenu from "./FloatingMenu";
 import Lnb from "./Lnb";
 import PageHeader from "./PageHeader";
-import "./SubPageLayout.css";
 
 interface BreadcrumbItem {
   label: string;
