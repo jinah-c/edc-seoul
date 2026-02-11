@@ -158,7 +158,7 @@ const Header = () => {
   ];
 
   const handleLogoClick = () => {
-    navigate("/");
+    window.location.href = "/edc-seoul/";
   };
 
   const handleUtilClick = (type: string) => {
@@ -273,7 +273,12 @@ const Header = () => {
         <div className="mobile-menu-overlay">
           <div className="mobile-menu">
             <div className="mobile-menu-header">
-              <div className="mobile-menu-logo">
+              <div
+                className="mobile-menu-logo"
+                onClick={() => {
+                  window.location.href = "/edc-seoul/";
+                }}
+              >
                 <img src={headerLogoM} alt="환경분쟁조정피해구제위원회" />
               </div>
               <button
@@ -326,6 +331,20 @@ const Header = () => {
                     </div>
                   </div>
                 ))}
+              
+                {/* 조정위원용 버튼 */}
+                <button
+                  className="mobile-menu-item"
+                  onClick={() => {
+                    navigate("/committee/login");
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                    <span className="mobile-menu-title" style={{ marginBottom: 0 }}>조정위원용</span>
+                    <div style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", color: "var(--gray-400)" }}>
+                      <FontAwesomeIcon icon={faChevronRight} />
+                    </div>
+                </button>
               </div>
             </div>
 

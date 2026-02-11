@@ -311,6 +311,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .mobile-menu-logo img {
   width: 240px;

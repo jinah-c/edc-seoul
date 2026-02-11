@@ -8,12 +8,12 @@
    * --bp-wide:      1440px ~        (와이드 데스크탑)
    *
    * Media Query 사용 예시:
+   * @media (max-width: 480px) { }  - 모바일 (소형)
    * @media (min-width: 768px) { } - 태블릿 이상
    * @media (min-width: 1024px) { } - 데스크탑 이상
    * @media (min-width: 1440px) { } - 와이드 이상
    * @media (max-width: 767px) { } - 모바일만
    * @media (max-width: 1023px) { } - 태블릿 이하
-   * @media (max-width: 480px) { }  - 모바일 (소형)
    */
 
   /* ========== Layout Widths ========== */

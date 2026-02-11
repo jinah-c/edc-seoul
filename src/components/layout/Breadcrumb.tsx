@@ -19,6 +19,11 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
   const handleClick = (url?: string) => {
     if (!url || url === "#") return;
 
+    if (url === "/") {
+      window.location.href = "/edc-seoul/";
+      return;
+    }
+
     if (url.startsWith("/")) {
       navigate(url);
     } else {
