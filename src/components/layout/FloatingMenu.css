@@ -114,8 +114,8 @@
   }
 }
 
-/* 높이 980px 이하에서는 화면 밖으로 숨김 */
-@media (max-height: 980px) {
+/* 높이 901px 이하에서는 화면 밖으로 숨김 */
+@media (max-height: 901px) {
   .floating-menu {
     right: -200px;
   }

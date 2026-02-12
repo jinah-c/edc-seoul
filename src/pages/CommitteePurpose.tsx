@@ -10,10 +10,10 @@ const CommitteePurpose = () => {
 
   // LNB 메뉴 데이터
   const lnbMenuItems = [
-    { id: "purpose", label: "위원회 설립목적", url: "#" },
-    { id: "committee", label: "위원회", url: "#" },
-    { id: "district", label: "자치구관련부서", url: "#" },
-    { id: "location", label: "찾아오시는길", url: "#" },
+    { id: "purpose", label: "위원회 설립목적", url: "/committee/purpose" },
+    { id: "committee", label: "위원회", url: "/committee/intro" },
+    { id: "district", label: "자치구관련부서", url: "/committee/district" },
+    { id: "location", label: "찾아오시는길", url: "/map" },
   ];
 
   return (

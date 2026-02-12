@@ -371,15 +371,14 @@ p span {
   color: var(--gray-500);
 }
 
-.bold{
+.bold {
   font-weight: 500;
 }
 
 @media (max-width: 768px) {
   .deco-title3 {
     padding-left: 20px;
-}
-  
+  }
 }
 
 /* ========================================
@@ -387,16 +386,13 @@ p span {
   - 텍스트 들여쓰기
 ======================================== */
 
-.num-list{
-
+.num-list {
 }
 
-.num-list li{
-  padding-left: 18px;   /* 아이콘과 들여쓰기 공간 확보 */
-  text-indent: -18px;  /* 첫 줄 아이콘 위치로 당기기 */
+.num-list li {
+  padding-left: 18px; /* 아이콘과 들여쓰기 공간 확보 */
+  text-indent: -18px; /* 첫 줄 아이콘 위치로 당기기 */
 }
-
-
 
 /* ========================================
   - Text Box
@@ -429,12 +425,14 @@ p span {
   padding: 20px 10px;
 }
 
-.bgPr50{background-color: var(--primary-50);}
-.bgAc50{background-color: var(--accent-50);}
+.bgPr50 {
+  background-color: var(--primary-50);
+}
+.bgAc50 {
+  background-color: var(--accent-50);
+}
 
-
-
-.rlsc{
+.rlsc {
   display: flex;
   flex-direction: row;
   row-gap: 12px;
@@ -442,10 +440,9 @@ p span {
   flex-wrap: wrap;
   font-size: clamp(15px, 1rem, 16px);
 }
-.rlsc span{
+.rlsc span {
   font-size: inherit;
 }
-
 
 /* ============================= */
 /* ============================= */
@@ -453,46 +450,50 @@ p span {
 /* ========== 표 스타일 ========== */
 /* ============================= */
 /* 공통 */
-table thead td.tac ,
-table thead th.tac ,
-table tbody td.tac ,
+table thead td.tac,
+table thead th.tac,
+table tbody td.tac,
 table tbody th.tac {
   text-align: center;
 }
 
 thead.h120 tr th,
-tbody.h120 tr th{
+tbody.h120 tr th {
   width: 120px;
 }
 
 thead.h140 tr th,
-tbody.h140 tr th{
+tbody.h140 tr th {
   width: clamp(90px, 12vw + 50px, 140px);
 }
 
 thead.w200 tr th,
-tbody.w200 tr th{
-  width: clamp( 90px , 25vw + 10px , 200px);
+tbody.w200 tr th {
+  width: clamp(90px, 25vw + 10px, 200px);
 }
 
-table thead th.w120 , .w120{
+table thead th.w120,
+.w120 {
   width: 120px;
 }
-table thead th.w140 , .w140 {
+table thead th.w140,
+.w140 {
   width: clamp(90px, 12vw + 50px, 140px);
 }
-table thead th.w160, .w160 {
+table thead th.w160,
+.w160 {
   width: 160px;
 }
-table thead th.w180, .w180 {
+table thead th.w180,
+.w180 {
   width: 180px;
 }
 
-table tbody.boR tr td{
+table tbody.boR tr td {
   border-right: 1px solid var(--line-50);
 }
 
-table tbody.boR tr td:last-child{
+table tbody.boR tr td:last-child {
   border-right: 0;
 }
 
@@ -501,15 +502,15 @@ table tbody.boR tr td:last-child{
   table thead th.w120 {
     width: 72px;
   }
-  
+
   table thead th.w140 {
     width: 96px;
   }
-  
+
   table thead th.w160 {
     width: 100px;
   }
-  
+
   table thead th.w180 {
     width: 146px;
   }
@@ -517,18 +518,14 @@ table tbody.boR tr td:last-child{
 
 @media (max-width: 320px) {
   thead.h140 tr th,
-  tbody.h140 tr th{
+  tbody.h140 tr th {
     width: 98px;
   }
 
-  table thead th.w180{
+  table thead th.w180 {
     width: 138px;
   }
-
 }
-
-
-
 
 /* ========== tableB () ========== */
 .tableB {
@@ -627,8 +624,6 @@ table tbody.boR tr td:last-child{
   border-bottom: 1px solid var(--line-100);
 }
 
-
-
 /* 모바일 반응형 */
 @media (max-width: 768px) {
   .tableC thead th {
@@ -705,8 +700,7 @@ table tbody.boR tr td:last-child{
 }
 
 @media (max-width: 768px) {
-
-    .tableD tbody tr {
+  .tableD tbody tr {
     display: grid;
     grid-template-columns: auto 1fr;
     row-gap: 0;
@@ -734,27 +728,26 @@ table tbody.boR tr td:last-child{
     width: 100%;
   }
 
-    .tableD tbody th {
+  .tableD tbody th {
     background-color: #f7fafc;
     font-weight: 500;
   }
 }
 
-
 /* ========================================
   탭 콘텐츠 스타일
 ======================================== */
 
-.tabBtns{
+.tabBtns {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 6px;
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
-.tab-button{
-    cursor: pointer;
+.tab-button {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 3px;
@@ -770,7 +763,7 @@ table tbody.boR tr td:last-child{
   position: relative;
 }
 
-.tab-button.active{
+.tab-button.active {
   background-color: var(--primary-50);
   color: var(--primary-700);
   border-color: var(--primary-500);
@@ -778,18 +771,18 @@ table tbody.boR tr td:last-child{
   cursor: default;
 }
 
-.tab-button:hover:not(.active){
+.tab-button:hover:not(.active) {
   text-decoration: underline;
   text-underline-offset: 2px;
   /* color: var(--primary-600) */
-  border-color: var(--gray-400)
+  border-color: var(--gray-400);
 }
 
-.tab-button .svg-inline--fa{
+.tab-button .svg-inline--fa {
   display: none;
 }
 
-.tab-button.active .svg-inline--fa{
+.tab-button.active .svg-inline--fa {
   font-size: 15px;
   display: inline-block;
   color: var(--primary-700);
@@ -800,31 +793,24 @@ table tbody.boR tr td:last-child{
   animation: fadeIn 0.3s ease-in-out;
 }
 
-
-
 @media (max-width: 768px) {
-  
-.tabBtns{
-  gap: 8px 6px;
+  .tabBtns {
+    gap: 8px 6px;
+  }
+
+  .tab-button {
+    gap: 2px;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .tab-button.active {
+    padding-left: 13px;
+  }
 }
-
-.tab-button{
-  gap: 2px;
-  padding: 8px 16px;
-  font-size: 15px;
-  font-weight: 500;
+@media (max-width: 480px) {
 }
-
-
-.tab-button.active{
-  padding-left: 13px;
-}
-}
-  @media (max-width: 480px) {
-
-}
-
-
 
 /* ========== 첨부파일 다운로드 ========== */
 
@@ -847,8 +833,6 @@ table tbody.boR tr td:last-child{
   padding: 4px;
   border-radius: 4px;
 }
-
-
 
 .attach-file-icon {
   min-width: 16px;
@@ -873,7 +857,7 @@ table tbody.boR tr td:last-child{
 
 /* ========== 첨부파일 확인 ========== */
 
-.attach-file-view{
+.attach-file-view {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
@@ -885,7 +869,7 @@ table tbody.boR tr td:last-child{
   border-radius: 4px;
 }
 
-.attach-view-icon{
+.attach-view-icon {
   min-width: 16px;
   width: 16px;
   height: 16px;
@@ -896,7 +880,6 @@ table tbody.boR tr td:last-child{
     contain;
   mask: url("../assets/images/file-view-icon.svg") no-repeat center / contain;
 }
-
 
 /* ========== 버튼 스타일 ========== */
 
@@ -918,11 +901,11 @@ table tbody.boR tr td:last-child{
   flex-wrap: wrap;
 }
 
-.btnWp.center{
+.btnWp.center {
   justify-content: center;
 }
 
-.btnWp.f-end{
+.btnWp.f-end {
   justify-content: flex-end;
 }
 
@@ -937,8 +920,7 @@ table tbody.boR tr td:last-child{
   .btnWp .btn {
     flex: 1;
   }
-} 
-
+}
 
 /* 기본 버튼 */
 .btn {
@@ -1103,7 +1085,6 @@ table tbody.boR tr td:last-child{
     height: 52px;
   }
 }
-
 
 /* ========================================
    SubPage Layout Styles

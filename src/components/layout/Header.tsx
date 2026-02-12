@@ -216,7 +216,7 @@ const Header = () => {
       description: "환경분쟁조정 제도에 대해 알아보세요",
       image: submenuImg01,
       subMenus: [
-        { id: 1, label: "제도안내", url: "/env/guidance" },
+        { id: 1, label: "제도안내", url: "/env/info" },
         { id: 2, label: "분쟁조정 사례", url: "#" },
         { id: 3, label: "조정신청 FAQ", url: "#" },
         { id: 4, label: "인터넷상담", url: "#" },
@@ -264,7 +264,7 @@ const Header = () => {
       description: "위원회에 대해 알아보세요",
       image: submenuImg05,
       subMenus: [
-        { id: 1, label: "위원회 설립목적", url: "#" },
+        { id: 1, label: "위원회 설립목적", url: "/committee/purpose" },
         { id: 2, label: "위원회", url: "#" },
         { id: 3, label: "자치구관련부서", url: "#" },
         { id: 4, label: "찾아오시는 길", url: "#" },

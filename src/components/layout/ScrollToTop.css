@@ -52,8 +52,8 @@
   transform: translateY(-1px);
 }
 
-/* 반응형: 1400px 이상이고 높이 981px 이상일 때 숨김 (기존 FloatingMenu의 TOP 버튼 사용) */
-@media (min-width: 1400px) and (min-height: 981px) {
+/* 반응형: 1400px 이상이고 높이 900px 이상일 때 숨김 (기존 FloatingMenu의 TOP 버튼 사용) */
+@media (min-width: 1400px) and (min-height: 900px) {
   .scroll-to-top {
     display: none;
   }
