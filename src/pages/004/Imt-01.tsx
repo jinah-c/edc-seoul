@@ -130,10 +130,10 @@ const Imt01 = () => {
   ];
 
   // 파일 다운로드 핸들러
-  const handleFileDownload = (fileName: string, fileUrl: string) => {
+  const handleFileDownload = (fileName: string, _fileUrl: string) => {
     // TODO: 실제 파일 다운로드 로직 구현
     console.log("파일 다운로드:", fileName);
-    // 예시: window.open(fileUrl, '_blank');
+    // 예시: window.open(_fileUrl, '_blank');
   };
 
   // 검색 핸들러

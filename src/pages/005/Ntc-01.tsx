@@ -108,7 +108,7 @@ const Ntc01 = () => {
   ];
 
   // 파일 다운로드 핸들러
-  const handleFileDownload = (fileName: string, fileUrl: string) => {
+  const handleFileDownload = (fileName: string, _fileUrl: string) => {
     console.log("파일 다운로드:", fileName);
     // TODO: 실제 파일 다운로드 로직 구현
   };
