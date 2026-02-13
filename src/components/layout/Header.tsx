@@ -242,7 +242,7 @@ const Header = () => {
       description: "필요한 정보를 찾아보세요",
       image: submenuImg03,
       subMenus: [
-        { id: 1, label: "관련법령", url: "#" },
+        { id: 1, label: "관련법령", url: "/info/law" },
         { id: 2, label: "통계자료", url: "#" },
       ],
     },
@@ -253,7 +253,7 @@ const Header = () => {
       description: "새로운 소식을 전해드립니다",
       image: submenuImg04,
       subMenus: [
-        { id: 1, label: "공지사항", url: "#" },
+        { id: 1, label: "공지사항", url: "/notice" },
         { id: 2, label: "보도/해명자료", url: "#" },
       ],
     },

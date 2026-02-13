@@ -1,13 +1,13 @@
 /* Dma Page Styles */
 
-.dma-content{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    animation: fadeIn 0.3s ease-in-out;
+.dma-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.dma-content .page-notice{
+.dma-content .page-notice {
   margin-bottom: 0;
 }
 
@@ -48,8 +48,7 @@
 
 /* 포커스 상태 (키보드 네비게이션) */
 .card-button:focus {
-  outline: 2px solid var(--primary-600);
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
 .card-button::after,
@@ -57,7 +56,7 @@
   transition: all 0.2s ease;
 }
 
-.card-button::after{
+.card-button::after {
   content: "↗";
   position: absolute;
   top: 6px;
@@ -69,7 +68,7 @@
   opacity: 0;
 }
 
-.card-button::before{
+.card-button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -86,7 +85,7 @@
 
 .card-button:hover,
 .card-button:focus {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 var(--shadow-y-3, 8px) 24px 0 rgba(44, 44, 67, 0.12);
   border-color: var(--primary-600);
 }
 
@@ -94,13 +93,11 @@
 .card-button:hover::after,
 .card-button:focus::after {
   opacity: 1;
-
 }
 
 .card-button:hover::before,
 .card-button:focus::before {
   opacity: 1;
-
 }
 
 /* 액티브 상태 */
@@ -110,7 +107,7 @@
 
 /* 카드 이미지 */
 .card-image {
-  width:64px;
+  width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -191,33 +188,32 @@
   }
 }
 
-
 @media (max-width: 620px) {
-  .moveQuickWp{
+  .moveQuickWp {
     flex-direction: column;
   }
 
-  .card-button{
+  .card-button {
     flex-direction: row;
     padding: 20px 30px;
     gap: 24px;
   }
 
-  .card-content{
+  .card-content {
     text-align: left;
   }
 
-  .card-title{
+  .card-title {
     margin-bottom: 6px;
   }
 
-  .card-image{
+  .card-image {
     min-width: 52px;
   }
 }
 
 @media (max-width: 480px) {
-  .card-button{
+  .card-button {
     padding: 20px;
     gap: 17px;
   }
@@ -262,4 +258,16 @@
   color: var(--primary-600);
   font-style: normal;
   font-weight: inherit;
+}
+
+.dmaImg01 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dmaImg01 img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

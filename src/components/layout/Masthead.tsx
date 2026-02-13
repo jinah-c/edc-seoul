@@ -49,9 +49,15 @@ const Masthead = () => {
   return (
     <div className={`masthead ${isHeaderHidden ? "masthead-hidden" : ""}`}>
       <div className="masthead-container">
-        <div className="masthead-logo">
+        <a
+          href="https://www.seoul.go.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="masthead-logo"
+          aria-label="서울특별시 홈페이지 (새 창으로 열림)"
+        >
           <img src={seoulLogo} alt="서울특별시" />
-        </div>
+        </a>
         <nav className="masthead-nav">
           {menuItems.map((item) => (
             <button

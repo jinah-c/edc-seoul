@@ -39,6 +39,7 @@
   --gray-800: #161321;
 
   /* ========== Primary Colors ========== */
+  --primary-20: #fafcfd;
   --primary-50: #f6fafc;
   --primary-70: #e8f3fc;
   --primary-100: #ddeefb;
@@ -88,10 +89,10 @@
   --secondary-700: #1f5b45;
   --secondary-800: #0a4a81;
   --secondary-900: #053466;
-  
+
   /* ========== font size ========== */
   --font-small: clamp(14px, 0.9rem, 15px);
-  --font-normal: clamp(15px, 0.96rem, 16px);  
+  --font-normal: clamp(15px, 0.96rem, 16px);
   --font-large: clamp(16px, 1vw + 15px, 18px);
   --font-xlarge: clamp(20px, 1.5vw + 16px, 22px);
 }

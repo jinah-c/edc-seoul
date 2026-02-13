@@ -6,6 +6,13 @@ import SubPageLayout from "../../components/layout/SubPageLayout";
 import quickItem01 from "../../assets/images/quick-item01.png";
 import quickItem02 from "../../assets/images/quick-item02.png";
 import quickItem03 from "../../assets/images/quick-item03.png";
+import dmaImg01 from "../../assets/images/Dma-img01.png";
+import dmaImg02 from "../../assets/images/Dma-img02.png";
+import dmaImg03 from "../../assets/images/Dma-img03.png";
+import dmaImg04 from "../../assets/images/Dma-img04.png";
+import dmaImg05 from "../../assets/images/Dma-img05.png";
+import dmaImg06 from "../../assets/images/Dma-img06.png";
+
 import "./Dma.css";
 
 const Dma01 = () => {
@@ -24,7 +31,6 @@ const Dma01 = () => {
 
   // LNB 메뉴 데이터
   const lnbMenuItems = [
-    { id: "application-guide", label: "신청안내", url: "#" },
     { id: "internet-application", label: "인터넷신청", url: "#" },
     { id: "visit-application", label: "방문신청", url: "#" },
     { id: "fee-calculator", label: "수수료계산기", url: "#" },
@@ -45,7 +51,8 @@ const Dma01 = () => {
       id: "writing-example",
       title: "작성 예시",
       titleHighlight: "예시",
-      description: "인터넷 분쟁조정 신청서 작성시 필요한 구비서류를 안내합니다.",
+      description:
+        "인터넷 분쟁조정 신청서 작성시 필요한 구비서류를 안내합니다.",
       image: quickItem01,
       onClick: () => setActiveTab("writing-example"),
       ariaLabel: "작성 예시 탭으로 이동",
@@ -109,7 +116,7 @@ const Dma01 = () => {
   // Tab 키 전역 핸들러: 마지막 탭에서 콘텐츠로 이동
   const handleGlobalTabKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Tab") {
-      const currentIndex = tabs.findIndex(tab => tab.id === activeTab);
+      const currentIndex = tabs.findIndex((tab) => tab.id === activeTab);
       // 현재 포커스가 마지막 탭에 있을 때
       if (!e.shiftKey && currentIndex === tabs.length - 1) {
         // 다음 포커스가 탭 리스트 밖으로 나갈 때 콘텐츠로 이동
@@ -134,7 +141,7 @@ const Dma01 = () => {
         <h1 className="page-title">인터넷신청</h1>
 
         {/* 탭버튼 */}
-        <ul 
+        <ul
           className="tabBtns dmaTab"
           role="tablist"
           aria-label="인터넷 신청 콘텐츠 탭"
@@ -162,7 +169,7 @@ const Dma01 = () => {
         {/* 탭 콘텐츠 */}
         {/* 신청안내 */}
         {activeTab === "application-guide" && (
-          <div 
+          <div
             className="dma-content"
             id="application-guide-panel"
             role="tabpanel"
@@ -171,16 +178,34 @@ const Dma01 = () => {
             tabIndex={-1}
           >
             {/* 페이지 설명 BOX */}
-            <div className="page-notice" role="region" aria-label="신청안내 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="신청안내 설명"
+            >
               <ul>
                 <li>
                   <span className="text-accent">서울특별시 관할구역 안</span>
                   에서 발생한 분쟁의 조정업무를 관장합니다.
-                  <p className="indentHyphen">- <span className="text-primary">알선·조정·재정·중재(1억원 이하) 신청사건</span>알선·조정·재정·중재(1억원 이하) 신청사건 (다만,일조방해,통풍방해,조망저해로 인한 분쟁의 재정을 제외합니다.)</p>
-                  <p className="indentHyphen">- 국가 또는 지방자치단체를 당사자로 하지 않는 분쟁의 조정</p>
+                  <p className="indentHyphen">
+                    -{" "}
+                    <span className="text-primary">
+                      알선·조정·재정·중재(1억원 이하) 신청사건
+                    </span>
+                    알선·조정·재정·중재(1억원 이하) 신청사건
+                    (다만,일조방해,통풍방해,조망저해로 인한 분쟁의 재정을
+                    제외합니다.)
+                  </p>
+                  <p className="indentHyphen">
+                    - 국가 또는 지방자치단체를 당사자로 하지 않는 분쟁의 조정
+                  </p>
                 </li>
                 <li>
-                  <span className="text-accent">인터넷신청을 통해 분쟁조정신청서를 작성</span>하여, 온라인상으로 구비서류 제출 및 수수료 결재가 가능하며 또한 사건진행과정을 조회하실 수 있습니다.
+                  <span className="text-accent">
+                    인터넷신청을 통해 분쟁조정신청서를 작성
+                  </span>
+                  하여, 온라인상으로 구비서류 제출 및 수수료 결재가 가능하며
+                  또한 사건진행과정을 조회하실 수 있습니다.
                 </li>
               </ul>
             </div>
@@ -189,10 +214,7 @@ const Dma01 = () => {
             <section aria-label="빠른 이동 카드">
               <ul className="moveQuickWp">
                 {quickCards.map((card) => (
-                  <li 
-                    key={card.id} 
-                    className="cardItem"
-                  >
+                  <li key={card.id} className="cardItem">
                     <button
                       onClick={card.onClick}
                       onKeyDown={(e) => {
@@ -209,7 +231,9 @@ const Dma01 = () => {
                         <img src={card.image} alt="" />
                       </div>
                       <div className="card-content">
-                        <h3 className="card-title">{highlightTitle(card.title, card.titleHighlight)}</h3>
+                        <h3 className="card-title">
+                          {highlightTitle(card.title, card.titleHighlight)}
+                        </h3>
                         <p className="card-description">{card.description}</p>
                       </div>
                     </button>
@@ -218,22 +242,66 @@ const Dma01 = () => {
               </ul>
             </section>
 
+            <div className="txt-section">
+              <h2 className="deco-title2">분쟁조정 인터넷신청 방법</h2>
 
-            <h2 className="deco-title2">분쟁조정 인터넷신청 방법</h2>
-            <p>신청안내 내용을 작성해주세요.</p>
+              <ul className="list-con">
+                <li className="num-li">
+                  1. 신청인이 서울특별시 환경분쟁조정 홈페이지(
+                  <a
+                    href="http://edc.seoul.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="서울특별시 환경분쟁조정 홈페이지 (새 창으로 열림)"
+                  >
+                    http://edc.seoul.go.kr
+                  </a>
+                  ) 인터넷신청을 통하여 접수합니다. 대표자 선정은 최대 3명까지
+                  가능합니다. 추가, 삭제 버튼으로 대표자 선정을 추가 또는 삭제할
+                  수 있습니다.
+                </li>
+                <li className="num-li">
+                  2. 신청인은 구비서류 및 피해입증 자료등을 첨부합니다. *
+                  신청인이 다수일 경우 신청인별 피해금액 및 대표자 선정 동의서를
+                  첨부하셔야만 신청이 완료됩니다.
+                </li>
+                <li className="num-li">
+                  3. 서울특별시 환경분쟁조정피해구제위원회의 접수 담당자는
+                  신청한 내용을 검토 후 수수료를 신청인 문자메시지로
+                  알려드립니다.
+                </li>
+                <li className="num-li">
+                  4. 수수료 납부가 완료된 후 사건이 접수되고 담당자가 배정되며,
+                  접수 후 아래의 순서대로 처리됩니다.
+                </li>
+                <li className="img-li">
+                  <picture className="dmaImg01">
+                    <source media="(max-width: 620px)" srcSet={dmaImg03} />
+                    <source media="(max-width: 1023px)" srcSet={dmaImg02} />
+                    <img src={dmaImg01} alt="분쟁조정 인터넷신청 방법" />
+                  </picture>
+                </li>
+                <li className="num-li">
+                  5. 서울특별시 환경분쟁조정피해구제위원회는 신청인에게 결정문을
+                  송달하며, 서울특별시 전자민원 서비스를 통하여 접수확인서를
+                  발급받을수 있습니다.
+                </li>
 
-            <ul className="num-list">
-              <li>1. 신청인이 서울특별시 환경분쟁조정 홈페이지(http:/edc.seoul.go.kr) 인터넷신청을 통하여 접수합니다.  대표자 선정은 최대 3명까지 가능합니다. 추가, 삭제 버튼으로 대표자 선정을 추가 또는 삭제할 수 있습니다.</li>
-              <li>2. 신청인은 구비서류 및 피해입증 자료등을 첨부합니다. * 신청인이 다수일 경우 신청인별 피해금액 및 대표자 선정 동의서를 첨부하셔야만 신청이 완료됩니다.</li>
-              <li>3. 서울특별시 환경분쟁조정피해구제위원회의 접수 담당자는 신청한 내용을 검토 후 수수료를 신청인 문자메시지로 알려드립니다.</li>
-              <li>4. 수수료 납부가 완료된 후 사건이 접수되고 담당자가 배정되며, 접수 후 아래의 순서대로 처리됩니다.</li>
-            </ul>
+                <li className="img-li">
+                  <picture className="dmaImg01">
+                    <source media="(max-width: 620px)" srcSet={dmaImg06} />
+                    <source media="(max-width: 1023px)" srcSet={dmaImg05} />
+                    <img src={dmaImg04} alt="분쟁조정 인터넷신청 방법" />
+                  </picture>
+                </li>
+              </ul>
+            </div>
           </div>
         )}
 
         {/* 작성예시 */}
         {activeTab === "writing-example" && (
-          <div 
+          <div
             className="dma-content"
             id="writing-example-panel"
             role="tabpanel"
@@ -242,10 +310,17 @@ const Dma01 = () => {
             tabIndex={-1}
           >
             {/* 페이지 설명 BOX */}
-            <div className="page-notice" role="region" aria-label="작성예시 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="작성예시 설명"
+            >
               <ul>
                 <li>
-                  환경분쟁조정을 <span className="text-accent">인터넷을 통하여 신청하실 때 작성방법</span>
+                  환경분쟁조정을{" "}
+                  <span className="text-accent">
+                    인터넷을 통하여 신청하실 때 작성방법
+                  </span>
                   을 알려드립니다.
                 </li>
               </ul>
@@ -258,7 +333,7 @@ const Dma01 = () => {
 
         {/* 신청하기 */}
         {activeTab === "apply" && (
-          <div 
+          <div
             className="dma-content"
             id="apply-panel"
             role="tabpanel"
@@ -267,14 +342,25 @@ const Dma01 = () => {
             tabIndex={-1}
           >
             {/* 페이지 설명 BOX */}
-            <div className="page-notice" role="region" aria-label="신청하기 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="신청하기 설명"
+            >
               <ul>
                 <li>
-                  <span className="text-accent">서울특별시 관할구역 안</span>에서 발생한 분쟁의 
-                  <span className="text-accent">알선·조정·재정·중재(조정가액 1억원이하) 신청사건 </span>
-                  (다만,일조방해,통풍방해,조망저해로 인한 분쟁의 재정을 제외합니다.)
+                  <span className="text-accent">서울특별시 관할구역 안</span>
+                  에서 발생한 분쟁의
+                  <span className="text-accent">
+                    알선·조정·재정·중재(조정가액 1억원이하) 신청사건{" "}
+                  </span>
+                  (다만,일조방해,통풍방해,조망저해로 인한 분쟁의 재정을
+                  제외합니다.)
                 </li>
-                <li>서울특별시 관할구역 안에서 발생한 분쟁의 조정사무 중 국가 또는 지방자치단체를 당사자로 하지 않는 분쟁의 조정</li>
+                <li>
+                  서울특별시 관할구역 안에서 발생한 분쟁의 조정사무 중 국가 또는
+                  지방자치단체를 당사자로 하지 않는 분쟁의 조정
+                </li>
               </ul>
             </div>
 
@@ -285,7 +371,7 @@ const Dma01 = () => {
 
         {/* 구비서류안내 */}
         {activeTab === "required-documents" && (
-          <div 
+          <div
             className="dma-content"
             id="required-documents-panel"
             role="tabpanel"
@@ -294,12 +380,22 @@ const Dma01 = () => {
             tabIndex={-1}
           >
             {/* 페이지 설명 BOX */}
-            <div className="page-notice" role="region" aria-label="구비서류안내 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="구비서류안내 설명"
+            >
               <ul>
-                <li>인터넷을 통하여 환경분쟁조정을 신청시에 구비서류를 간편하게 제출하실 수 있습니다.</li>
-                <li>환경분쟁조정을
-                  <span className="text-accent">인터넷을 통하여 신청하실때 필요한 구비서류</span>
-                에 대해 알려드립니다.
+                <li>
+                  인터넷을 통하여 환경분쟁조정을 신청시에 구비서류를 간편하게
+                  제출하실 수 있습니다.
+                </li>
+                <li>
+                  환경분쟁조정을
+                  <span className="text-accent">
+                    인터넷을 통하여 신청하실때 필요한 구비서류
+                  </span>
+                  에 대해 알려드립니다.
                 </li>
               </ul>
             </div>
@@ -311,7 +407,7 @@ const Dma01 = () => {
 
         {/* 신청내역조회 */}
         {activeTab === "inquiry" && (
-          <div 
+          <div
             className="dma-content"
             id="inquiry-panel"
             role="tabpanel"
@@ -320,10 +416,22 @@ const Dma01 = () => {
             tabIndex={-1}
           >
             {/* 페이지 설명 BOX */}
-            <div className="page-notice" role="region" aria-label="신청내역조회 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="신청내역조회 설명"
+            >
               <ul>
-                <li>신청하신 환경분쟁조정 <span className="text-accent">사건의 진행현황</span>을 알려드립니다.</li>
-                <li>접수담당자가 신청내용 및 구비서류를 확인한 후 전자지불시스템을 이용하여 수수료 납부가 가능하며, 수수료 납부 후에 정상적으로 <span className="text-accent">사건접수</span>가 됩니다.</li>
+                <li>
+                  신청하신 환경분쟁조정{" "}
+                  <span className="text-accent">사건의 진행현황</span>을
+                  알려드립니다.
+                </li>
+                <li>
+                  접수담당자가 신청내용 및 구비서류를 확인한 후 전자지불시스템을
+                  이용하여 수수료 납부가 가능하며, 수수료 납부 후에 정상적으로{" "}
+                  <span className="text-accent">사건접수</span>가 됩니다.
+                </li>
               </ul>
             </div>
 
