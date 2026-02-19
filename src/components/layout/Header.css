@@ -40,7 +40,8 @@
 .header-right {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  height:100%;
+  
 }
 
 /* 상단 유틸 메뉴 */
@@ -49,6 +50,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 12px;
+  padding-top: 8px;
 }
 
 .header-util-btn {
@@ -57,6 +59,7 @@
   background: none;
   border: none;
   cursor: pointer;
+      padding: 9px 0;
   transition: color 0.2s ease;
 }
 
@@ -74,11 +77,14 @@
 .header-gnb {
   display: flex;
   align-items: center;
-  gap: 40px;
+  height: 100%;
+
+
 }
 
 .gnb-item {
   position: relative;
+  height: 100%;
 }
 
 .gnb-link {
@@ -88,9 +94,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 8px 21px 16px;
   transition: color 0.2s ease;
   white-space: nowrap;
+  height: 100%;
+}
+
+.gnb-item:last-child .gnb-link{
+  padding-right: 0;
 }
 
 .gnb-link:hover,
