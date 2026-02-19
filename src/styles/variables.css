@@ -93,6 +93,16 @@
   /* ========== font size ========== */
   --font-small: clamp(14px, 0.9rem, 15px);
   --font-normal: clamp(15px, 0.96rem, 16px);
+  --font-medium: clamp(16px, 1.06rem, 17px);
   --font-large: clamp(16px, 1vw + 15px, 18px);
   --font-xlarge: clamp(20px, 1.5vw + 16px, 22px);
+  
+  
+  
+  
+  /* ========== font size ========== */
+  --transition-2s: all .2s ease;
+  --transition-3s: all .3s ease;
+  --transition-5s: all .5s ease;
 }
+

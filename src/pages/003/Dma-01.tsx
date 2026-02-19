@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faChevronUp, faChevronDown, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import SubPageLayout from "../../components/layout/SubPageLayout";
 import quickItem01 from "../../assets/images/quick-item01.png";
 import quickItem02 from "../../assets/images/quick-item02.png";
@@ -19,8 +19,25 @@ const Dma01 = () => {
   const navigate = useNavigate();
   // 탭 상태 관리 (기본값: "신청안내")
   const [activeTab, setActiveTab] = useState("application-guide");
+  const [activeInnerTab, setActiveInnerTab] = useState("individual");
+  // 아코디언 열림 상태 (STEP 1 기본 열림)
+  const [openSteps, setOpenSteps] = useState<Record<string, boolean>>({
+    step1: false,
+    step2: false,
+    step3: false,
+  });
+  const allOpen = Object.values(openSteps).every(Boolean);
+
+  const toggleStep = (key: string) =>
+    setOpenSteps((prev) => ({ ...prev, [key]: !prev[key] }));
+
+  const toggleAll = () => {
+    const next = !allOpen;
+    setOpenSteps({ step1: next, step2: next, step3: next });
+  };
   const contentRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const innerTabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Breadcrumb 데이터
   const breadcrumbItems = [
@@ -44,6 +61,28 @@ const Dma01 = () => {
     { id: "required-documents", label: "구비서류안내" },
     { id: "inquiry", label: "신청내역조회" },
   ];
+
+  // 작성예시 내부 탭 데이터
+  const innerTabs = [
+    { id: "individual", label: "신청인이 개인일 경우" },
+    { id: "multi-single", label: "신청인이 다수일 경우", sub: "1가구일 경우" },
+    { id: "multi-multi", label: "신청인이 다수일 경우", sub: "2가구 이상일 경우" },
+  ];
+
+  // 작성예시 내부 탭 키보드 네비게이션
+  const handleInnerTabKeyDown = (e: React.KeyboardEvent, idx: number) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      const next = (idx + 1) % innerTabs.length;
+      setActiveInnerTab(innerTabs[next].id);
+      innerTabRefs.current[next]?.focus();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      const prev = (idx - 1 + innerTabs.length) % innerTabs.length;
+      setActiveInnerTab(innerTabs[prev].id);
+      innerTabRefs.current[prev]?.focus();
+    }
+  };
 
   // 빠른 이동 카드 데이터
   const quickCards = [
@@ -326,8 +365,259 @@ const Dma01 = () => {
               </ul>
             </div>
 
-            <h2 className="deco-title2">작성예시</h2>
-            <p>작성예시 내용을 작성해주세요.</p>
+            {/* 작성예시 내부 탭 */}
+            <div className="inner-tab-section">
+              <div
+                className="inner-tab-list"
+                role="tablist"
+                aria-label="작성예시 항목"
+              >
+                {innerTabs.map((itab, idx) => (
+                  <button
+                    key={itab.id}
+                    ref={(el) => { innerTabRefs.current[idx] = el; }}
+                    id={`inner-tab-${itab.id}`}
+                    className={`inner-tab-btn${activeInnerTab === itab.id ? " active" : ""}`}
+                    role="tab"
+                    aria-selected={activeInnerTab === itab.id}
+                    aria-controls={`inner-panel-${itab.id}`}
+                    tabIndex={activeInnerTab === itab.id ? 0 : -1}
+                    onClick={() => setActiveInnerTab(itab.id)}
+                    onKeyDown={(e) => handleInnerTabKeyDown(e, idx)}
+                    type="button"
+                  >
+                    {itab.label}
+                    {itab.sub && <span className="inner-tab-sub">({itab.sub})</span>}
+                  </button>
+                ))}
+              </div>
+
+              {/* 신청인이 개인일 경우 */}
+              {activeInnerTab === "individual" && (
+                <div
+                  id="inner-panel-individual"
+                  role="tabpanel"
+                  aria-labelledby="inner-tab-individual"
+                  className="inner-tab-panel"
+                >
+                  {/* 전체 열기/닫기 버튼 */}
+                  <div className="accordion-toolbar">
+                    <button
+                      type="button"
+                      className="accordion-toggle-all"
+                      onClick={toggleAll}
+                      aria-expanded={allOpen}
+                    >
+                      전체 STEP {allOpen ? "닫기" : "열기"}
+                      <FontAwesomeIcon icon={allOpen ? faMinus : faPlus} aria-hidden="true" />
+                    </button>
+                  </div>
+
+                  {/* STEP 1 */}
+                  <div className={`accordion-item${openSteps.step1 ? " open" : ""}`}>
+                    <button
+                      type="button"
+                      className="accordion-header"
+                      onClick={() => toggleStep("step1")}
+                      aria-expanded={openSteps.step1}
+                      aria-controls="acc-panel-step1"
+                      id="acc-btn-step1"
+                    >
+                      <span className="accordion-step-label">
+                        <em>*</em> STEP 1
+                      </span>
+                      <span className="accordion-title">신청인 정보</span>
+                      <span className="faq-toggle-btn" aria-hidden="true">
+                        <FontAwesomeIcon icon={openSteps.step1 ? faChevronUp : faChevronDown} />
+                      </span>
+                    </button>
+                    <div
+                      id="acc-panel-step1"
+                      role="region"
+                      aria-labelledby="acc-btn-step1"
+                      className={`accordion-body${openSteps.step1 ? " open" : ""}`}
+                    >
+                      <p className="">
+                        신청인 정보 입력 예시화면입니다.{" "}
+                        <span className="text-accent stxt">* 표시는 필수 입력사항 입니다.</span>
+                      </p>
+                      <div className="accordion-img-placeholder" aria-label="예시 이미지 영역">
+                        예시 이미지 첨부
+                      </div>
+                      <ol className="accordion-list">
+                        <li>
+                          <strong className="ltxt">1. 개인정보 수집에 동의</strong>
+                          <p>개인정보 수집에 동의의 체크를 합니다.</p>
+                        </li>
+                        <li>
+                          <strong className="ltxt">2. 신청인 구분 선택</strong>
+                          <p>신청인이 개인일 경우와 1가구 또는 3가구 이상일 경우에 따라 신청인 구분을 선택합니다.</p>
+                        </li>
+                        <li>
+                          <strong className="ltxt">3. 신청인</strong>
+                          <p>신청인 필수 정보를 입력합니다.</p>
+                          <p>→ 신청인 이름, 주민등록번호, 휴대전화 또는 유선전화, 주소</p>
+                        </li>
+                        <li>
+                          <strong className="ltxt">4. 버튼</strong>
+                          <p>다음 → 다음버튼으로 피신청인/피해내역 입력페이지로 이동합니다.</p>
+                          <p>취소 → 취소버튼으로 사건신청을 취소합니다.</p>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  {/* STEP 2 */}
+                  <div className={`accordion-item${openSteps.step2 ? " open" : ""}`}>
+                    <button
+                      type="button"
+                      className="accordion-header"
+                      onClick={() => toggleStep("step2")}
+                      aria-expanded={openSteps.step2}
+                      aria-controls="acc-panel-step2"
+                      id="acc-btn-step2"
+                    >
+                      <span className="accordion-step-label">
+                        <em>*</em> STEP 2
+                      </span>
+                      <span className="accordion-title">피신청인 / 피해내역</span>
+                      <span className="faq-toggle-btn" aria-hidden="true">
+                        <FontAwesomeIcon icon={openSteps.step2 ? faChevronUp : faChevronDown} />
+                      </span>
+                    </button>
+                    <div
+                      id="acc-panel-step2"
+                      role="region"
+                      aria-labelledby="acc-btn-step2"
+                      className={`accordion-body${openSteps.step2 ? " open" : ""}`}
+                    >
+                       <p className="">
+                        피신청인 / 피해내역 예시화면입니다.{" "}
+                        <span className="text-accent stxt">* 표시는 필수 입력사항 입니다.</span>
+                      </p>
+                      <div className="accordion-img-placeholder" aria-label="예시 이미지 영역">
+                        예시 이미지 첨부
+                      </div>
+                      <ol className="accordion-list">
+                        <li>
+                          <strong className="ltxt">1. 피신청인 명단</strong>
+                          <p>추가,삭제버튼 : 추가,삭제 버튼으로 피신청인을 추가/삭제할 수 있습니다.</p>
+                          <p>신청인 필수 정보를 입력합니다.</p>
+                          <p>- 사업자의 경우(상호(명칭), 주소), 개인의 경우(성명, 주소)</p>
+                        </li>
+                        <li>
+                          <strong className="ltxt">2. 세부 피해내역</strong>
+                          <p>추가,삭제버튼 : 추가,삭제 버튼으로 세부피해내역을 추가/삭제할 수 있습니다.</p>
+                          <p>합계 :피해내역과 금액을 입력하면 피해(예상)금액이 자동 합산됩니다.</p>
+                        </li>
+                        <li>
+                          <strong className="ltxt">3. 예상수수료 계산</strong>
+                          <p>피해내역 및 피해액을 입력후에 예상수수료 버튼을 클릭하면 피해(예상)금액을 기준하여 예상수수료를 검색합니다.</p>
+                        </li>
+                        <li>
+                          <strong className="ltxt">4. 버튼</strong>
+                          <p>다음 → 다음버튼으로 피신청인/피해내역 입력페이지로 이동합니다.</p>
+                          <p>취소 → 취소버튼으로 사건신청을 취소합니다.</p>
+                        </li>
+                      </ol>
+                     
+                    </div>
+                  </div>
+
+                  {/* STEP 3 */}
+                  <div className={`accordion-item${openSteps.step3 ? " open" : ""}`}>
+                    <button
+                      type="button"
+                      className="accordion-header"
+                      onClick={() => toggleStep("step3")}
+                      aria-expanded={openSteps.step3}
+                      aria-controls="acc-panel-step3"
+                      id="acc-btn-step3"
+                    >
+                      <span className="accordion-step-label">
+                        <em>*</em> STEP 3
+                      </span>
+                      <span className="accordion-title">분쟁내용 입력</span>
+                      <span className="faq-toggle-btn" aria-hidden="true">
+                        <FontAwesomeIcon icon={openSteps.step3 ? faChevronUp : faChevronDown} />
+                      </span>
+                    </button>
+                    <div
+                      id="acc-panel-step3"
+                      role="region"
+                      aria-labelledby="acc-btn-step3"
+                      className={`accordion-body${openSteps.step3 ? " open" : ""}`}
+                    >
+                       <p className="">
+                        피신청인 / 피해내역 예시화면입니다.{" "}
+                        <span className="text-accent stxt">* 표시는 필수 입력사항 입니다.</span>
+                      </p>
+                      <div className="accordion-img-placeholder" aria-label="예시 이미지 영역">
+                        예시 이미지 첨부
+                      </div>
+                      <ol className="accordion-list">
+                        <li>
+                          <strong className="ltxt">1. 환경피해발생 일시/장소</strong>
+                          <p>: 피해발생장소의 주소를 기재합니다.</p>
+                        </li>
+
+                        <li>
+                          <strong className="ltxt">2. 조정을 구하는 취지 및 이유</strong>
+                          <p>피해입은 사실의 피해원인 및 대상을 기재하고 상세내역을 6하 원칙에 의해 가능한 구체적으로 작성합니다.</p>
+                          <p>신청인의 PC에서 작성하여 저장된(txt, doc, hwp, pdf 등의 문서파일 또는 스캔파일) 파일을 첨부합니다.</p>
+                        </li>
+
+                        <li>
+                          <strong className="ltxt">3. 분쟁의 경과</strong>
+                          <p>피해과정을 시기별로 작성합니다.</p>
+                          <p>신청인의 PC에서 작성하여 저장된(txt, doc, hwp, pdf 등의 문서파일 또는 스캔파일) 파일을 첨부합니다.</p>
+                        </li>
+
+                        <li>
+                          <strong className="ltxt">4. 구비서류첨부</strong>
+                          <p>추가삭제버튼 : 추가, 삭제 버튼으로 구비서류를 추가/삭제할 수 있습니다.</p>
+                          <p>구비서류 안내에 따라 필요한 구비서류의 종류를 선택하고 파일을 첨부합니다.</p>
+                        </li>
+ <li>
+                          <strong className="ltxt">4. 버튼</strong>
+                          <p>다음 → 다음버튼으로 피신청인/피해내역 입력페이지로 이동합니다.</p>
+                          <p>취소 → 취소버튼으로 사건신청을 취소합니다.</p>
+                        </li>
+                        
+                        </ol>
+                     
+                    </div>
+                  </div>
+                </div>
+              )}
+
+
+              {/* 신청인이 다수일 경우 (1가구) */}
+              {activeInnerTab === "multi-single" && (
+                <div
+                  id="inner-panel-multi-single"
+                  role="tabpanel"
+                  aria-labelledby="inner-tab-multi-single"
+                  className="inner-tab-panel"
+                >
+                  <h2 className="deco-title2">신청인이 다수일 경우 작성예시 <span>(1가구일 경우)</span></h2>
+                  <p>신청인이 다수(1가구)일 경우 작성예시 내용을 작성해주세요.</p>
+                </div>
+              )}
+
+              {/* 신청인이 다수일 경우 (2가구 이상) */}
+              {activeInnerTab === "multi-multi" && (
+                <div
+                  id="inner-panel-multi-multi"
+                  role="tabpanel"
+                  aria-labelledby="inner-tab-multi-multi"
+                  className="inner-tab-panel"
+                >
+                  <h2 className="deco-title2">신청인이 다수일 경우 작성예시 <span>(2가구 이상일 경우)</span></h2>
+                  <p>신청인이 다수(2가구 이상)일 경우 작성예시 내용을 작성해주세요.</p>
+                </div>
+              )}
+            </div>
           </div>
         )}
 

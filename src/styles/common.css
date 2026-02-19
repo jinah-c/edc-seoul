@@ -257,6 +257,12 @@ p span {
   font-weight: 400;
 }
 
+.ltxt {
+  font-size: clamp(17px, 1.125rem, 18px);
+  line-height: 150%;
+  font-weight: 600;
+}
+
 /* 페이지 타이틀 */
 .page-title {
   font-size: clamp(23px, 1.5vw + 18px, 29px);
@@ -384,13 +390,13 @@ p span {
 .deco-text2::before {
   content: "";
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 4px;
   border: 2px solid var(--primary-600);
   position: absolute;
   left: 0;
-  top: 6px;
+  top: 7px;
   box-sizing: border-box;
 }
 
@@ -406,18 +412,21 @@ p span {
 }
 
 .deco-text3::before {
+  /* background-image: url("../assets/images/txt-deco01.png"); */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  position: absolute;
   content: "";
   display: inline-block;
-  background-image: url("../assets/images/txt-deco01.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   flex-shrink: 0;
-  width: 19px;
-  height: 19px;
-  position: absolute;
-  left: 0;
-  top: 4px;
+  width: 8px;
+  height: 3px;
+  top: 50%;
+  transform: translateY(-48%);
+  left: 5px;
+  border-radius: 2px;
+  background-color: var(--primary-400);
 }
 
 /* ========================================

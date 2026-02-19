@@ -621,7 +621,7 @@ table .w120 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   margin: 20px 0;
 }
 
