@@ -137,7 +137,7 @@
   }
 
   .table-search-wp {
-    gap: 6px;
+    gap: 8px;
     margin: 0;
   }
   .table-search-select {
@@ -157,7 +157,7 @@
   .table-search-select,
   .table-search-input,
   .table-search-btn {
-    height: 42px;
+    height: 48px;
     font-size: 14px;
   }
 }
@@ -396,7 +396,7 @@ table .w120 {
 
   .tableA thead th {
     padding: 14px 10px;
-    font-size: 14px;
+    font-size: 15px;
   }
   .tableA tbody td {
     padding: 14px 8px;
@@ -405,27 +405,52 @@ table .w120 {
   }
 }
 
-/* ========== tableB () ========== */
+/* ========== tableB ( 위원회구성 ) ========== */
 .tableB {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-top: 24px;
   background-color: #fff;
   box-sizing: border-box;
+  border: 1px solid #e8eff2;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
+.tableB.brown {
+  border-color: #e0cfbb;
+}
+
+.tableB.brown th,
+.tableB.brown td {
+  border-color: #e0cfbb;
+}
+.tableB.brown th {
+  background-color: #faf5ef;
+}
 .tableB th,
 .tableB td {
   padding: 20px 24px;
-  border: 1px solid #e8eff2;
+  border-right: 1px solid #e8eff2;
+  border-bottom: 1px solid #e8eff2;
+}
+
+.tableB tr > *:last-child {
+  border-right: none;
+}
+
+.tableB tr:last-child > * {
+  border-bottom: none;
 }
 
 .tableB th {
   background-color: #effaf9;
   font-size: 16px;
-  font-weight: 400;
-  color: var(--gray-700);
+  font-weight: 500;
+  color: var(--gray-600);
   width: 150px;
+  word-break: keep-all;
 }
 
 .tableB td {
@@ -456,14 +481,15 @@ table .w120 {
     gap: 18px;
   }
 
-  .tableB th,
   .tableB td {
     padding: 16px 16px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .tableB th {
     width: 100px;
+    padding: 16px 16px;
+    font-size: 16px;
   }
 }
 
@@ -718,7 +744,7 @@ table .w120 {
   display: flex;
   align-items: center;
   gap: 3px;
-  padding: 11px 22px;
+  padding: 10px 22px;
   font-size: var(--font-normal);
   font-weight: 500;
   color: var(--gray-600);

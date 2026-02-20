@@ -1,6 +1,6 @@
-import SubPageLayout from "../components/layout/SubPageLayout";
+import SubPageLayout from "../../components/layout/SubPageLayout";
 
-const CommitteePurpose = () => {
+const Cin01 = () => {
   // Breadcrumb 데이터
   const breadcrumbItems = [
     { label: "홈", url: "/" },
@@ -28,26 +28,12 @@ const CommitteePurpose = () => {
 
         <div className="page-notice">
           <ul>
-            {/* <li>
-              분쟁조정 신청에 필요한{" "}
-              <span className="text-accent">서류 및 양식</span>을 제공합니다.
-            </li>
-            <li>
-              알선 · 조정 · 재정 · 중재신청서는 처음 신청할때 가장 먼저 필요한
-              서류이며, 신청인이 다수인 경우는 3인 이하의 대표자선정서도 같이
-              작성하여야 합니다.
-            </li> */}
             <li>
               <span className="text-primary">
                 서울특별시 환경분쟁조정피해구제위원회
               </span>
               의 설립목적과 기능을 소개합니다.
             </li>
-            {/* <li>
-              신청서 제출시 해당되는{" "}
-              <span className="text-primary">구비서류를 첨부</span>하여{" "}
-              <span className="text-primary">제출</span>합니다.
-            </li> */}
           </ul>
         </div>
 
@@ -64,18 +50,18 @@ const CommitteePurpose = () => {
           <section className="txt-section">
             <h3 className="deco-title3">기능</h3>
             <p>
-              서울특별시 관할구역 안에서 발생하는 환경분쟁의
-              알선·조정·재정·중재(조정가액 1억원 이하인 신청사건, 국가나
-              지방자치단체를 당사자로 하지 않는 분쟁의 조정)
+              서울특별시 관할구역 안에서 발생하는 환경분쟁의 알선·조정·재정·중재
+              (조정가액 1억원 이하인 신청사건, 국가나 지방자치단체를 당사자로 하지
+              않는 분쟁의 조정)
             </p>
           </section>
 
           <section className="txt-section">
             <h3 className="deco-title3">구성</h3>
             <p>
-              서울특별시 관할구역 안에서 발생하는 환경분쟁의
-              알선·조정·재정·중재(조정가액 1억원 이하인 신청사건, 국가나
-              지방자치단체를 당사자로 하지 않는 분쟁의 조정)
+              서울특별시 관할구역 안에서 발생하는 환경분쟁의 알선·조정·재정·중재
+              (조정가액 1억원 이하인 신청사건, 국가나 지방자치단체를 당사자로 하지
+              않는 분쟁의 조정)
             </p>
 
             <table className="tableB">
@@ -105,4 +91,4 @@ const CommitteePurpose = () => {
   );
 };
 
-export default CommitteePurpose;
+export default Cin01;

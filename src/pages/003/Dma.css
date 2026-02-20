@@ -119,16 +119,15 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  scale: .94;
+  scale: 0.94;
   transition: var(--transition-2s);
 }
 
 .card-button:hover,
-.card-button:focus{
-  .card-image img{
+.card-button:focus {
+  .card-image img {
     scale: 1;
   }
-  
 }
 /* 카드 콘텐츠 */
 .card-content {
@@ -170,7 +169,7 @@
 /* 모바일 반응형 */
 @media (max-width: 768px) {
   .dma-content {
-    gap: 40px;
+    gap: 28px;
   }
 
   .moveQuickWp {
@@ -312,7 +311,10 @@
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
   white-space: nowrap;
   bottom: -2px;
 }
@@ -368,7 +370,7 @@
 .accordion-toolbar {
   display: flex;
   justify-content: flex-end;
-  padding-bottom:6px;
+  padding-bottom: 6px;
   border-bottom: 2px solid var(--gray-700);
 }
 
@@ -394,7 +396,6 @@
   color: var(--primary-600);
 }
 
-
 /* 아코디언 아이템 */
 .accordion-item {
   border-bottom: 1px solid var(--gray-200);
@@ -417,19 +418,17 @@
   transition: var(--transition-2s);
 }
 
-
-.accordion-header:hover{
+.accordion-header:hover {
   background-color: var(--primary-50);
 }
 
-.accordion-header:hover .accordion-title{
+.accordion-header:hover .accordion-title {
   text-decoration: underline;
   text-underline-offset: 4px;
-
 }
 
-.accordion-header:hover .faq-toggle-btn{
-  color: var(--primary-600)
+.accordion-header:hover .faq-toggle-btn {
+  color: var(--primary-600);
 }
 
 .accordion-step-label {
@@ -450,13 +449,12 @@
   transition: var(--transition-2s);
 }
 
-
 .accordion-item.open .accordion-step-label {
   color: var(--primary-600);
 }
 
-.accordion-item.open .accordion-body{
-  border-top: 1px dashed var(--line-50, #DCDEE6);
+.accordion-item.open .accordion-body {
+  border-top: 1px dashed var(--line-50, #dcdee6);
 }
 .accordion-title {
   flex: 1;
@@ -470,7 +468,10 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.3s ease,
+    padding 0.35s ease;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -480,26 +481,30 @@
 .accordion-body.open {
   max-height: 2000px;
   opacity: 1;
-  padding: 24px 20px 48px;
+  padding: 24px 20px 32px;
 }
 
-.accordion-list{
+.accordion-list {
   padding: 12px 0;
 }
-.accordion-list li{
+.accordion-list li {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 5px;
+  margin-bottom: 32px;
   font-size: var(--font-normal);
 }
 
-
-
+.accordion-list .ltxt {
+  margin-bottom: 6px;
+}
 /* 이미지 플레이스홀더 */
 .accordion-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
-  min-height: 200px;
+  /* min-height: 200px;
   background-color: var(--bg-100, #f5f7fa);
   border-radius: 8px;
   display: flex;
@@ -507,9 +512,16 @@
   justify-content: center;
   color: var(--gray-300, #bbb);
   font-size: var(--font-medium, 14px);
-  border: 1px dashed var(--line-200, #ddd);
+  border: 1px dashed var(--line-200, #ddd); */
 }
 
+.accordion-img-placeholder img {
+  max-width: 100%;
+  width: fit-content;
+  height: auto;
+  display: block;
+  background: #fff;
+}
 /* 모바일 */
 @media (max-width: 620px) {
   .accordion-header {
@@ -521,12 +533,232 @@
     min-width: 68px;
     font-size: var(--font-normal);
   }
-  
+
   .accordion-title {
     font-size: var(--font-normal);
   }
 
   .accordion-img-placeholder {
     min-height: 140px;
+  }
+}
+
+.dma-content .login-page-container {
+  border: 1px solid var(--line-50);
+  border-radius: 12px;
+  min-height: 400px;
+  padding: 50px 20px;
+  word-break: keep-all;
+}
+
+/* ======================================= */
+/*  신청종류 카드                          */
+/* ======================================= */
+
+.application-types-section {
+  margin-top: 60px;
+}
+
+.application-types-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.application-type-card .card-link {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+  min-height: 172px;
+  padding: 30px;
+  border: 1px solid var(--line-100);
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--gray-600);
+  transition: border-color 0.2s ease;
+}
+
+.application-type-card .card-link:hover {
+  border-color: var(--primary-500);
+  box-shadow: 0 8px 30px 0 rgba(44, 44, 67, 0.12);
+}
+
+.application-type-card .card-link:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+.application-type-card .card-header {
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.application-type-card .card-header,
+.application-type-card .card-body,
+.application-type-card .card-footer {
+  align-self: stretch;
+}
+
+.card-header .mtit {
+  display: flex;
+  flex-direction: column;
+}
+
+.application-type-card .card-subtitle {
+  font-size: var(--font-medium);
+  font-weight: 400;
+  color: #555;
+}
+
+.application-type-card .card-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  justify-content: space-between;
+}
+
+.application-type-card .card-description {
+  margin: 0;
+  font-size: var(--font-normal);
+  color: #555;
+  word-break: keep-all;
+}
+
+.application-type-card .card-period {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.application-type-card .card-period p.text-primary {
+  font-weight: 500;
+}
+.application-type-card .card-period p {
+  line-height: 100%;
+}
+.application-type-card .calendar-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../assets/images/date-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-bottom: 3px;
+}
+
+.application-type-card .period-value {
+  font-size: 15px;
+  color: var(--primary-500);
+  font-weight: 600;
+}
+
+.application-type-card .card-footer {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background-color: var(--primary-50);
+  color: var(--gray-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.application-type-card .card-action-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #b2b8bf;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.application-type-card .arrow-icon {
+  display: block;
+  width: 20px;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7'/%3E%3Cpath d='M9 7h8v8'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition:
+    height 0.2s ease,
+    opacity 0.2s ease,
+    margin 0.2s ease;
+}
+
+.application-type-card .card-link:hover .card-footer,
+.application-type-card .card-link:focus-visible .card-footer {
+  background-color: var(--primary-600);
+}
+
+.application-type-card .card-link:hover .card-action-text,
+.application-type-card .card-link:focus-visible .card-action-text {
+  color: #fff;
+}
+
+.application-type-card .card-link:hover .arrow-icon,
+.application-type-card .card-link:focus-visible .arrow-icon {
+  height: 20px;
+  margin-bottom: 2px;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .application-types-section {
+    margin-top: 40px;
+  }
+
+  .application-type-card .card-link {
+    min-height: 0;
+    padding: 28px 20px;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .card-header .mtit {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .application-type-card .card-body {
+    gap: 16px;
+  }
+  .application-type-card .card-title {
+    font-size: var(--font-large);
+  }
+
+  .application-type-card .card-footer {
+    width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    flex-direction: row;
+    gap: 8px;
+
+    background-color: var(--primary-600);
+  }
+  .application-type-card .card-action-text {
+    color: #fff;
+  }
+
+  .application-type-card .arrow-icon {
+    width: 0;
+    height: 0;
+  }
+
+  .application-type-card .card-link:hover .arrow-icon,
+  .application-type-card .card-link:focus-visible .arrow-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0;
   }
 }

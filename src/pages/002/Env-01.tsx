@@ -211,7 +211,15 @@ const Env01 = () => {
                 결정하여 이송한 분쟁
               </li>
               <li className="deco-text2">
-                Tel(전화) : 044-201-7999, 홈페이지 : http:/edc.me.go.kr
+                Tel(전화) : 044-201-7999, 홈페이지 :{" "}
+                <a
+                  href="https://edc.me.go.kr"
+                  target="_blank"
+                  className="link-txt"
+                  title="새창으로 이동"
+                >
+                  https://edc.me.go.kr
+                </a>
               </li>
             </ul>
           </section>

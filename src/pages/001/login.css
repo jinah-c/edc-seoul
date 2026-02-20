@@ -56,6 +56,10 @@
   gap: 16px;
 }
 
+.committee-login-submit {
+  margin-top: 12px;
+}
+
 .form-group {
   width: 100%;
 }
@@ -179,5 +183,9 @@
 
   .login-page-notice p {
     font-size: 12px;
+  }
+
+  .login-page-form {
+    gap: 14px;
   }
 }

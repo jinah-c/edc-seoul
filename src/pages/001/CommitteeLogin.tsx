@@ -77,7 +77,7 @@ const CommitteeLogin = () => {
 
               <button
                 type="submit"
-                className="btn btn-primary btn-lg btn-block"
+                className="btn btn-primary btn-lg btn-block committee-login-submit"
               >
                 로그인
               </button>

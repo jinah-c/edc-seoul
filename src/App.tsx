@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/index.css";
 import MainPage from "./pages/MainPage";
-import CommitteePurpose from "./pages/CommitteePurpose";
+import Cin01 from "./pages/006/Cin-01";
 import Login from "./pages/001/Login";
 import CommitteeLogin from "./pages/001/CommitteeLogin";
 import Env01 from "./pages/002/Env-01";
@@ -20,7 +20,7 @@ function App() {
       <ScrollToTopButton />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/committee/purpose" element={<CommitteePurpose />} />
+        <Route path="/committee/purpose" element={<Cin01 />} />
         <Route path="/env/info" element={<Env01 />} />
         <Route path="/dispute/internet-apply" element={<Dma01 />} />
         <Route path="/info/law" element={<Imt01 />} />

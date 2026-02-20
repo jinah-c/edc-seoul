@@ -90,6 +90,16 @@ html {
 .mb16 {
   margin-bottom: 16px;
 }
+
+/* ========================================
+   공통 레이아웃 스타일
+======================================== */
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 /* ========================================
    공통 스타일 (Common Styles)
    - 폰트 정의
@@ -199,7 +209,7 @@ h6 {
 
 p {
   font-size: clamp(15px, 1rem, 16px);
-  line-height: 1.7;
+  line-height: 140%;
   font-weight: 400;
   color: var(--gray-700);
 }
@@ -258,7 +268,13 @@ p span {
 }
 
 .ltxt {
-  font-size: clamp(17px, 1.125rem, 18px);
+  font-size: clamp(16px, 1.05rem, 18px);
+  line-height: 150%;
+  font-weight: 600;
+}
+
+.mtit {
+  font-size: clamp(20px, 1.4rem, 24px);
   line-height: 150%;
   font-weight: 600;
 }
@@ -434,6 +450,10 @@ p span {
   - 기타 꾸밈텍스트
 ======================================== */
 
+.link-txt {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 /* 텍스트 그룹 gap10*/
 
 .text-group10 {
@@ -454,10 +474,6 @@ p span {
   text-align: center;
 }
 
-.text-description.login {
-  font-size: clamp(16px, 1.1vw + 14px, 17px);
-}
-
 .text-description span {
   font-size: inherit;
 }
@@ -476,6 +492,12 @@ p span {
   color: var(--gray-500);
 }
 
+.text-bg-brown {
+  width: fit-content;
+  background-color: #fff2e2;
+  padding-left: 4px;
+  padding-right: 4px;
+}
 .bold {
   font-weight: 500;
 }
@@ -497,15 +519,47 @@ p span {
   gap: 12px;
 }
 
-li.num-li {
+.num-li {
   padding-left: 18px; /* 아이콘과 들여쓰기 공간 확보 */
   text-indent: -18px; /* 첫 줄 아이콘 위치로 당기기 */
 }
 
+.idt-txt {
+  padding-left: 18px;
+}
 .img-li {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+@media (max-width: 768px) {
+  .idt-txt {
+    font-size: 15px;
+  }
+}
+/* ========================================
+  - Text List Group
+  - .txt-section 내부사용가능
+======================================== */
+
+.txt-list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+td .txt-list-group {
+  margin-bottom: 0;
+}
+.txt-list-group .ltxt {
+  margin-top: 18px;
+}
+
+.txt-list-group .ltxt:first-child {
+  margin-top: 0;
+}
+
 /* ========================================
   - Text Box
   - 텍스트 박스 스타일
@@ -727,5 +781,13 @@ li.num-li {
 
   .page-notice li {
     font-size: 15px;
+  }
+  .txt-list-group {
+    gap: 2px;
+  }
+
+  .txt-list-group .ltxt {
+    font-size: 16px;
+    margin-top: 12px;
   }
 }

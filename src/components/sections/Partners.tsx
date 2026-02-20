@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -28,6 +28,15 @@ interface Partner {
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
+  const getItemsPerSlide = () => {
+    if (typeof window === "undefined") return 4;
+    if (window.innerWidth <= 576) return 2;
+    if (window.innerWidth <= 768) return 2.5;
+    if (window.innerWidth <= 1024) return 3;
+    return 4;
+  };
+  const [itemsPerSlide, setItemsPerSlide] = useState(getItemsPerSlide);
 
   // 파트너 데이터
   const partners: Partner[] = [
@@ -81,20 +90,68 @@ const Partners = () => {
     },
   ];
 
-  const itemsPerSlide = 4; // 한 화면에 보여줄 아이템 수
-  const maxIndex = Math.max(0, partners.length - itemsPerSlide); // 마지막으로 이동할 수 있는 인덱스
+  const loopLength = partners.length;
+  const displayPartners = [...partners, ...partners];
+  const autoPlayInterval = 5000; // 자동재생 간격(느리게)
+  const slideTransitionMs = 500;
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? loopLength - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setCurrentIndex((prev) => prev + 1);
   };
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
+
+  // 화면 크기에 따라 슬라이드 노출 개수 동기화 (CSS 브레이크포인트와 동일)
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerSlide(getItemsPerSlide());
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 노출 개수 변경 시 현재 인덱스가 범위를 넘지 않도록 보정
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, loopLength));
+  }, [loopLength]);
+
+  // 자동재생: 재생 상태일 때 일정 간격으로 다음 슬라이드 이동
+  useEffect(() => {
+    if (!isPlaying || loopLength === 0) return;
+
+    const timer = window.setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+    }, autoPlayInterval);
+
+    return () => window.clearInterval(timer);
+  }, [isPlaying, loopLength, autoPlayInterval]);
+
+  // 마지막 요소 다음(복제 구간)으로 이동했을 때, 트랜지션 없이 처음 위치로 점프
+  useEffect(() => {
+    if (currentIndex < loopLength) return;
+
+    const timer = window.setTimeout(() => {
+      setIsTransitionEnabled(false);
+      setCurrentIndex(0);
+
+      // 다음 프레임에서 트랜지션 복구
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitionEnabled(true);
+        });
+      });
+    }, slideTransitionMs);
+
+    return () => window.clearTimeout(timer);
+  }, [currentIndex, loopLength]);
 
   const handlePartnerClick = (url: string) => {
     if (url && url !== "#" && url !== "") {
@@ -144,11 +201,14 @@ const Partners = () => {
                 transform: `translateX(-${
                   currentIndex * (100 / itemsPerSlide)
                 }%)`,
+                transition: isTransitionEnabled
+                  ? `transform ${slideTransitionMs}ms ease`
+                  : "none",
               }}
             >
-              {partners.map((partner) => (
+              {displayPartners.map((partner, index) => (
                 <div
-                  key={partner.id}
+                  key={`${partner.id}-${index}`}
                   className="partner-item"
                   onClick={() => handlePartnerClick(partner.url)}
                 >

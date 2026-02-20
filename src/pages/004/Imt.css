@@ -1,1 +1,105 @@
 /* 정보자료 > 관련법령 페이지 스타일 */
+
+/* 테이블 래퍼 */
+.table-wp {
+  margin-bottom: 40px;
+}
+
+/* 페이지네이션 */
+.pagination-wp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 40px 0;
+}
+
+.page-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--gray-500);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-first,
+.page-prev,
+.page-next,
+.page-last {
+  font-size: 22px;
+  color: var(--gray-400);
+}
+
+.page-prev {
+  margin-right: 6px;
+}
+.page-next {
+  margin-left: 6px;
+}
+.page-number {
+  margin: 0 2px;
+}
+
+.page-btn:hover {
+  border-color: var(--gray-100);
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.page-btn.active {
+  border-color: var(--gray-600);
+  background-color: #fff;
+  color: var(--gray-800);
+  font-weight: 500;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.content-section {
+  padding: 40px 0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .table-wp {
+    overflow-x: auto;
+    margin-bottom: 30px;
+  }
+
+  /* 모바일에서 파일, 등록일, 조회 컬럼 숨기기 */
+  .tableA th:nth-child(4), /* 등록일 */
+  .tableA th:nth-child(5), /* 파일 */
+  .tableA th:nth-child(6), /* 조회 */
+  .tableA td:nth-child(4),
+  .tableA td:nth-child(5),
+  .tableA td:nth-child(6) {
+    display: none;
+  }
+
+  .file-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pagination-wp {
+    gap: 4px;
+    margin: 30px 0;
+  }
+
+  .page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
