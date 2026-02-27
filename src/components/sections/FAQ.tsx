@@ -74,23 +74,28 @@ const FAQ = () => {
               className={`faq-item ${openId === item.id ? "open" : ""}`}
             >
               {/* 질문 영역 */}
-              <div className="faq-question" onClick={() => toggleFAQ(item.id)}>
+              <button
+                className="faq-question"
+                onClick={() => toggleFAQ(item.id)}
+                aria-expanded={openId === item.id}
+                aria-controls={`faq-answer-${item.id}`}
+              >
                 <div className="faq-question-content">
                   <div className="faq-icon faq-icon-q">
-                    <img src={qIcon} alt="Q" />
+                    <img src={qIcon} alt="" aria-hidden="true" />
                   </div>
                   <p className="faq-question-text">{item.question}</p>
                 </div>
-                <button className="faq-toggle-btn" aria-label="펼치기/접기">
+                <span className="faq-toggle-btn" aria-hidden="true">
                   <FontAwesomeIcon
                     icon={openId === item.id ? faChevronUp : faChevronDown}
                   />
-                </button>
-              </div>
+                </span>
+              </button>
 
               {/* 답변 영역 */}
               {openId === item.id && (
-                <div className="faq-answer">
+                <div className="faq-answer" id={`faq-answer-${item.id}`} role="region" aria-label={`${item.question} 답변`}>
                   <div className="faq-icon faq-icon-a">
                     <img src={aIcon} alt="A" />
                   </div>

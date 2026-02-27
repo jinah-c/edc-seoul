@@ -6,6 +6,8 @@ import Login from "./pages/001/Login";
 import CommitteeLogin from "./pages/001/CommitteeLogin";
 import Env01 from "./pages/002/Env-01";
 import Dma01 from "./pages/003/Dma-01";
+import Dma03 from "./pages/003/Dma-03";
+import Dms02 from "./pages/003/Dms-02";
 import Imt01 from "./pages/004/Imt-01";
 import Ntc01 from "./pages/005/Ntc-01";
 import My01 from "./pages/001/my-01";
@@ -23,6 +25,8 @@ function App() {
         <Route path="/committee/purpose" element={<Cin01 />} />
         <Route path="/env/info" element={<Env01 />} />
         <Route path="/dispute/internet-apply" element={<Dma01 />} />
+        <Route path="/dispute/internet-apply/alson" element={<Dms02 />} />
+        <Route path="/dispute/visit-apply" element={<Dma03 />} />
         <Route path="/info/law" element={<Imt01 />} />
         <Route path="/notice" element={<Ntc01 />} />
         <Route path="/mypage/my-dispute" element={<My01 />} />

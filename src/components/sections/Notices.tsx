@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./Notices.css";
@@ -17,10 +18,10 @@ const Notices = () => {
   >("전체");
 
   const tabs = [
-    { id: "전체", label: "전체", url: "#" },
-    { id: "공지사항", label: "공지사항", url: "#" },
+    { id: "전체", label: "전체", url: "" },
+    { id: "공지사항", label: "공지사항", url: "/notice" },
     { id: "언론･보도", label: "언론･보도", url: "#" },
-    { id: "관련법령", label: "관련법령", url: "#" },
+    { id: "관련법령", label: "관련법령", url: "/info/law" },
     { id: "분쟁조정통계현황", label: "분쟁조정통계현황", url: "#" },
   ] as const;
 
@@ -155,18 +156,7 @@ const Notices = () => {
       ? noticesData
       : noticesData.filter((notice) => notice.category === activeTab);
 
-  const handleNoticeClick = (url: string) => {
-    if (url && url !== "#") {
-      window.location.href = url;
-    }
-  };
-
-  const handleMoreClick = () => {
-    const currentTab = tabs.find((tab) => tab.id === activeTab);
-    if (currentTab && currentTab.url && currentTab.url !== "#") {
-      window.location.href = currentTab.url;
-    }
-  };
+  const activeTabUrl = tabs.find((tab) => tab.id === activeTab)?.url ?? "";
 
   return (
     <section className="notices-section">
@@ -194,30 +184,37 @@ const Notices = () => {
                       | "분쟁조정통계현황"
                   )
                 }
+                tabIndex={activeTab === tab.id ? -1 : 0}
               >
                 {tab.label}
               </button>
             ))}
           </div>
-          <button className="notices-more-btn" onClick={handleMoreClick}>
-            <FontAwesomeIcon icon={faPlus} />
-          </button>
+          {activeTab !== "전체" && (
+            <Link
+              className="notices-more-btn"
+              to={activeTabUrl}
+              aria-label={`${activeTab} 더보기`}
+            >
+              <FontAwesomeIcon icon={faPlus} aria-hidden="true" />
+            </Link>
+          )}
         </div>
 
         {/* 공지사항 카드 리스트 */}
         <div className="notices-grid" data-aos="fade-up" data-aos-delay="200">
           {filteredNotices.slice(0, 4).map((notice) => (
-            <div
+            <Link
               key={notice.id}
               className="notice-card"
-              onClick={() => handleNoticeClick(notice.url)}
+              to={notice.url}
             >
               <div className={`notice-category ${notice.category}`}>
                 {notice.category}
               </div>
               <h3 className="notice-title">{notice.title}</h3>
               <p className="notice-date">{notice.date}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

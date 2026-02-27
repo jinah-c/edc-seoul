@@ -25,10 +25,12 @@
   /* ========== Uncategorized Colors ========== */
   --point-color: #7de1cf;
   --line-50: #eef2f5;
+  --line-70: #e6ebf0;
   --line-100: #dcdee6;
 
   /* ========== Gray Scale ========== */
-  --gray-50: #f8f8f8;
+  --gray-20: #f8f8f8;
+  --gray-50: #F8F8F8;
   --gray-100: #eeeeee;
   --gray-200: #dddddd;
   --gray-300: #cacaca;
@@ -92,7 +94,7 @@
 
   /* ========== font size ========== */
   --font-small: clamp(14px, 0.9rem, 15px);
-  --font-normal: clamp(15px, 0.96rem, 16px);
+  --font-normal: clamp(15px, 1rem, 16px);
   --font-medium: clamp(16px, 1.06rem, 17px);
   --font-large: clamp(16px, 1vw + 15px, 18px);
   --font-xlarge: clamp(20px, 1.5vw + 16px, 22px);
@@ -106,3 +108,8 @@
   --transition-5s: all .5s ease;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --font-normal: 15px;
+  }
+}

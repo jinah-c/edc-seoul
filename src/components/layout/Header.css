@@ -100,6 +100,13 @@
   height: 100%;
 }
 
+.gnb-link:focus-visible{
+  text-underline-offset: 6px;
+  text-decoration: underline;
+  outline: none;
+
+}
+
 .gnb-item:last-child .gnb-link{
   padding-right: 0;
 }

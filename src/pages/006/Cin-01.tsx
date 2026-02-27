@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import SubPageLayout from "../../components/layout/SubPageLayout";
 
 const Cin01 = () => {
+  useEffect(() => {
+    document.title = "상담신청 | 서울특별시 환경분쟁조정위원회";
+  }, []);
+
   // Breadcrumb 데이터
   const breadcrumbItems = [
     { label: "홈", url: "/" },

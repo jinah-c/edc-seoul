@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./QuickMenu.css";
 import quick01 from "../../assets/images/quick-01.png";
 import quick02 from "../../assets/images/quick-02.png";
@@ -19,7 +20,7 @@ const QuickMenu = () => {
       id: 1,
       title: "분쟁조정안내",
       icon: quick01,
-      url: "#",
+      url: "/env/info",
     },
     {
       id: 2,
@@ -31,7 +32,7 @@ const QuickMenu = () => {
       id: 3,
       title: "분쟁조정신청",
       icon: quick03,
-      url: "#",
+      url: "/dispute/internet-apply",
     },
     {
       id: 4,
@@ -41,7 +42,7 @@ const QuickMenu = () => {
     },
     {
       id: 5,
-      title: "인내책자 다운로드",
+      title: "안내책자 다운로드",
       icon: quick05,
       url: "#",
     },
@@ -53,28 +54,21 @@ const QuickMenu = () => {
     },
   ];
 
-  const handleMenuClick = (url: string) => {
-    if (url && url !== "#") {
-      window.location.href = url;
-    }
-  };
-
   return (
     <section className="quick-menu-section">
       <div className="container">
         <div className="quick-menu-grid" data-aos="fade-up">
           {menuItems.map((item) => (
-            <div
+            <Link
               key={item.id}
               className="quick-menu-item"
-              onClick={() => handleMenuClick(item.url)}
+              to={item.url}
             >
               <div className="quick-menu-icon">
-                {/* 아이콘 이미지가 추가될 영역 */}
-                {item.icon && <img src={item.icon} alt={item.title} />}
+                {item.icon && <img src={item.icon} alt="" aria-hidden="true" />}
               </div>
               <p className="quick-menu-title">{item.title}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

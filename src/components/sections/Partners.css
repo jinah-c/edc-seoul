@@ -11,6 +11,8 @@
   align-items: center;
 }
 
+
+
 /* 왼쪽: 타이틀과 컨트롤 */
 .partners-left {
   flex-shrink: 0;
@@ -97,6 +99,18 @@
   overflow: hidden;
   cursor: pointer;
 }
+
+
+a.partner-logo:focus-visible{
+  outline-offset: 2px ;
+  border-radius: 12px;
+
+    border-color: var(--primary-600);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+
 
 .partner-logo:hover {
   border-color: var(--primary-600);

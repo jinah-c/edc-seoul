@@ -17,7 +17,7 @@ const MainVisual = () => {
       label: "인터넷 신청",
       subLabel: "인터넷 신청하기",
       icon: visualCard01,
-      url: "#",
+      url: "/dispute/internet-apply",
     },
     {
       id: 2,

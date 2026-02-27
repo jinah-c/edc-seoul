@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import SubPageLayout from "../../components/layout/SubPageLayout";
 import envImage01W from "../../assets/images/env01_img_w.png";
 import envImage01M from "../../assets/images/env01_img_m.png";
 import "./Env.css";
 
 const Env01 = () => {
+  useEffect(() => {
+    document.title = "제도안내 | 서울특별시 환경분쟁조정위원회";
+  }, []);
+
   // Breadcrumb 데이터
   const breadcrumbItems = [
     { label: "홈", url: "/" },
@@ -47,7 +52,7 @@ const Env01 = () => {
         <div className="r-content">
           {/* 환경분쟁조정제도란? ======================== */}
           <section className="txt-section">
-            <h3 className="deco-title2">환경분쟁조정제도란?</h3>
+            <h2 className="deco-title2">환경분쟁조정제도란?</h2>
             <p className="bold-txt">
               환경분쟁조정제도는 시민들이 생활 속에서 부딪히는 크고 작은
               환경분쟁을 복잡한{" "}
@@ -73,14 +78,14 @@ const Env01 = () => {
           </section>
 
           <section className="txt-section">
-            <h3 className="deco-title2">조정(調整)의 종류?</h3>
+            <h2 className="deco-title2">조정(調整)의 종류?</h2>
 
             <table className="tableC">
               <thead>
                 <tr>
-                  <th className="w140 tac">구분</th>
-                  <th>정의</th>
-                  <th className="w120 tac">처리기간</th>
+                  <th scope="col" className="w140 tac">구분</th>
+                  <th scope="col">정의</th>
+                  <th scope="col" className="w120 tac">처리기간</th>
                 </tr>
               </thead>
               <tbody className="">
@@ -121,7 +126,7 @@ const Env01 = () => {
 
           {/* 조정(調整)신청 대상 ======================== */}
           <section className="txt-section">
-            <h3 className="deco-title2">조정(調整)신청 대상</h3>
+            <h2 className="deco-title2">조정(調整)신청 대상</h2>
             <p className="deco-text1">
               사업활동, 기타 사람의 활동에 따라 발생하였거나 발생이 예상되는
               대기오염, 수질오염, 토양오염, 해양오염 및 소음, 진동과 악취 등에
@@ -151,7 +156,7 @@ const Env01 = () => {
 
           {/* 조정(調整)업무별 처리기관 ======================== */}
           <section className="txt-section">
-            <h3 className="deco-title2">조정(調整)업무별 처리기관</h3>
+            <h2 className="deco-title2">조정(調整)업무별 처리기관</h2>
             <p className="deco-text1">
               서울특별시 환경분쟁조정피해구제위원회는 위의 조정사무 중 다음의
               업무를 관장합니다.
@@ -226,9 +231,9 @@ const Env01 = () => {
 
           {/* 신청사건 처리절차 (조정·재정·중재의 경우) ======================== */}
           <section className="txt-section">
-            <h3 className="deco-title2">
+            <h2 className="deco-title2">
               신청사건 처리절차 (조정·재정·중재의 경우)
-            </h3>
+            </h2>
 
             <picture className="envImge01">
               <source media="(max-width: 768px)" srcSet={envImage01M} />
@@ -238,7 +243,7 @@ const Env01 = () => {
 
           {/* 조정(調整)신청 절차 ======================== */}
           <section className="txt-section">
-            <h3 className="deco-title2">조정(調整)의 효력</h3>
+            <h2 className="deco-title2">조정(調整)의 효력</h2>
 
             <div className="text-group10">
               <div className="deco-text3">알선의 효력</div>

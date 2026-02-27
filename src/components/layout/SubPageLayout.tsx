@@ -34,6 +34,9 @@ const SubPageLayout = ({
 }: SubPageLayoutProps) => {
   return (
     <div className="subpage-layout">
+      {/* 건너뛰기 링크 (6.4.1) */}
+      <a href="#subpage-skip-target" className="skip-nav">본문 바로가기</a>
+
       {/* 마스터헤드 */}
       <Masthead />
 
@@ -42,7 +45,7 @@ const SubPageLayout = ({
 
       {/* 메인 콘텐츠 영역 */}
       <div className="subpage-container">
-        <div className="subpage-wrapper">
+        <div className="subpage-wrapper" id="subpage-skip-target" tabIndex={-1}>
           {/* LNB (왼쪽 네비게이션) */}
           <Lnb
             title={lnbTitle}
@@ -51,7 +54,7 @@ const SubPageLayout = ({
           />
 
           {/* 페이지 콘텐츠 */}
-          <main className="subpage-content fade-in">
+          <main className="subpage-content fade-in" id="main-content">
             <div className="subpage-inner">
               {/* 페이지 헤더 (Breadcrumb + Actions) */}
               <PageHeader breadcrumbItems={breadcrumbItems} />

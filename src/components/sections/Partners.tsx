@@ -153,12 +153,6 @@ const Partners = () => {
     return () => window.clearTimeout(timer);
   }, [currentIndex, loopLength]);
 
-  const handlePartnerClick = (url: string) => {
-    if (url && url !== "#" && url !== "") {
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-  };
-
   return (
     <section className="partners-section">
       <div className="container">
@@ -206,21 +200,31 @@ const Partners = () => {
                   : "none",
               }}
             >
-              {displayPartners.map((partner, index) => (
-                <div
-                  key={`${partner.id}-${index}`}
-                  className="partner-item"
-                  onClick={() => handlePartnerClick(partner.url)}
-                >
-                  <div className="partner-logo">
-                    {partner.logo ? (
-                      <img src={partner.logo} alt={partner.name} />
-                    ) : (
-                      <div className="partner-placeholder">{partner.name}</div>
-                    )}
+              {displayPartners.map((partner, index) => {
+                const visibleEnd = currentIndex + Math.ceil(itemsPerSlide);
+                const isVisible = index >= currentIndex && index < visibleEnd;
+                return (
+                  <div
+                    key={`${partner.id}-${index}`}
+                    className="partner-item"
+                  >
+                    <a
+                      className="partner-logo"
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${partner.name} (새 창 열림)`}
+                      tabIndex={isVisible ? 0 : -1}
+                    >
+                      {partner.logo ? (
+                        <img src={partner.logo} alt="" aria-hidden="true" />
+                      ) : (
+                        <div className="partner-placeholder">{partner.name}</div>
+                      )}
+                    </a>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

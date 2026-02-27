@@ -99,6 +99,20 @@
   border-bottom: none;
 }
 
+a.case-card:focus-visible{
+  outline-offset: -2px ;
+  border-radius: 8px;
+}
+a.case-card:focus-visible .case-title {
+  color: var(--primary-600);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a.case-card:focus-visible .case-category {
+  color: var(--primary-600);
+}
+
 .case-card:hover .case-title {
   color: var(--primary-600);
   text-decoration: underline;

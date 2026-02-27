@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Cases.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
@@ -76,12 +77,6 @@ const Cases = () => {
     },
   ];
 
-  const handleCaseClick = (url: string) => {
-    if (url && url !== "#") {
-      window.location.href = url;
-    }
-  };
-
   return (
     <section className="cases-section">
       <div className="container">
@@ -103,15 +98,15 @@ const Cases = () => {
 
         <div className="cases-grid" data-aos="fade-up" data-aos-delay="100">
           {(isMobile ? casesData.slice(0, 4) : casesData).map((caseItem) => (
-            <div
+            <Link
               key={caseItem.id}
               className="case-card"
-              onClick={() => handleCaseClick(caseItem.url)}
+              to={caseItem.url}
             >
               <div className="case-category">{caseItem.category}</div>
               <h3 className="case-title">{caseItem.title}</h3>
               <p className="case-date">{caseItem.date}</p>
-            </div>
+            </Link>
           ))}
         </div>
 

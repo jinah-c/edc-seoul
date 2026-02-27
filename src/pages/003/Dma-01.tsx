@@ -39,6 +39,7 @@ const Dma01 = () => {
 
   // 내부 탭이 변경될 때 아코디언 초기화
   useEffect(() => {
+    document.title = "인터넷신청 | 서울특별시 환경분쟁조정위원회";
     setOpenSteps({
       step1: false,
       step2: false,
@@ -79,8 +80,8 @@ const Dma01 = () => {
 
   // LNB 메뉴 데이터
   const lnbMenuItems = [
-    { id: "internet-application", label: "인터넷신청", url: "#" },
-    { id: "visit-application", label: "방문신청", url: "#" },
+    { id: "internet-application", label: "인터넷신청", url: "/dispute/internet-apply" },
+    { id: "visit-application", label: "방문신청", url: "/dispute/visit-apply" },
     { id: "fee-calculator", label: "수수료계산기", url: "#" },
   ];
 
@@ -418,7 +419,7 @@ const Dma01 = () => {
                     role="tab"
                     aria-selected={activeInnerTab === itab.id}
                     aria-controls={`inner-panel-${itab.id}`}
-                    tabIndex={activeInnerTab === itab.id ? 0 : -1}
+                    tabIndex={0}
                     onClick={() => setActiveInnerTab(itab.id)}
                     onKeyDown={(e) => handleInnerTabKeyDown(e, idx)}
                     type="button"
@@ -1428,7 +1429,7 @@ const Dma01 = () => {
             <section className="application-types-section">
               <ul className="application-types-list">
                 <li className="application-type-card">
-                  <a href="#" className="card-link">
+                  <a href="/edc-seoul/dispute/internet-apply/alson" className="card-link">
                     <div className="card-header">
                       <h3 className="mtit">
                         알선신청

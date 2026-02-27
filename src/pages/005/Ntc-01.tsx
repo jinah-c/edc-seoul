@@ -184,12 +184,12 @@ const Ntc01 = () => {
           <table className="tableA">
             <thead>
               <tr>
-                <th className="w60 tac">번호</th>
-                <th>제목</th>
-                <th className="w90 tac">작성자</th>
-                <th className="w100 tac">등록일</th>
-                <th className="w80 tac">파일</th>
-                <th className="w60 tac">조회</th>
+                <th scope="col" className="w60 tac">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col" className="w90 tac">작성자</th>
+                <th scope="col" className="w100 tac">등록일</th>
+                <th scope="col" className="w80 tac">파일</th>
+                <th scope="col" className="w60 tac">조회</th>
               </tr>
             </thead>
             <tbody>

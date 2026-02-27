@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -40,6 +40,7 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const gnbRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const isMouseOverHeader = useRef(false);
   const mobileCloseButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -79,9 +80,21 @@ const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // 헤더 숨겨질 때 서브메뉴 닫기 (focus-within으로 열린 경우도 포함)
+  useEffect(() => {
+    if (isHeaderHidden) {
+      setActiveMenu(null);
+      const focusedEl = gnbRef.current?.querySelector(":focus") as HTMLElement | null;
+      focusedEl?.blur();
+    }
+  }, [isHeaderHidden]);
+
   // 스크롤 방향 감지
   useEffect(() => {
     const handleScroll = () => {
+      // 마우스가 헤더/서브메뉴 위에 있으면 스크롤 동작 무시
+      if (isMouseOverHeader.current) return;
+
       const currentScrollY = window.scrollY;
 
       // 최상단(0~200px)에서는 항상 헤더 표시
@@ -272,9 +285,6 @@ const Header = () => {
     },
   ];
 
-  const handleLogoClick = () => {
-    window.location.href = "/edc-seoul/";
-  };
 
   const handleUtilClick = (type: string) => {
     if (type === "login") {
@@ -293,16 +303,20 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${isHeaderHidden ? "header-hidden" : ""}`}>
+    <header
+      className={`header ${isHeaderHidden ? "header-hidden" : ""}`}
+      onMouseEnter={() => { isMouseOverHeader.current = true; }}
+      onMouseLeave={() => { isMouseOverHeader.current = false; }}
+    >
       <div className="header-container">
         {/* 로고 */}
-        <div className="header-logo" onClick={handleLogoClick}>
+        <Link className="header-logo" to="/">
           <img
             src={isMobile ? headerLogoM : headerLogoWeb}
-            alt="환경분쟁조정피해구제위원회"
+            alt="환경분쟁조정피해구제위원회 홈으로 이동"
             loading="eager"
           />
-        </div>
+        </Link>
 
         {/* 우측 영역 */}
         <div className="header-right">

@@ -752,7 +752,7 @@ table .w120 {
   border: 1px solid var(--gray-100);
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease, outline 0s, outline-offset 0s;
   position: relative;
 }
 
@@ -944,7 +944,7 @@ table .w120 {
 
 .btn-primary:hover:not(:disabled) {
   background-color: var(--primary-700);
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.192);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.192);
 }
 
 .btn-primary:active:not(:disabled) {
@@ -959,7 +959,7 @@ table .w120 {
 .btn-secondary:hover:not(:disabled) {
   background-color: var(--gray-800);
   color: #fff;
-  box-shadow: 0 4px 8px rgba(15, 16, 16, 0.144);
+  box-shadow: 0 2px 7px rgba(15, 16, 16, 0.144);
 }
 
 /* cancel  버튼 */
@@ -971,9 +971,9 @@ table .w120 {
 }
 
 .btn-cancel:hover:not(:disabled) {
-  background-color: var(--gray-100);
-  border-color: var(--gray-100);
-  box-shadow: 0 4px 8px rgba(15, 16, 16, 0.144);
+  background-color: var(--gray-200);
+  border-color: var(--gray-200);
+  box-shadow: 0 2px 5px rgba(15, 16, 16, 0.09);
 }
 
 /* line 버튼 */
@@ -1065,7 +1065,6 @@ table .w120 {
 
   .btn-sm {
     font-size: 14px;
-    height: 40px;
   }
 
   .btn-md {
@@ -1076,5 +1075,475 @@ table .w120 {
   .btn-lg {
     font-size: 15px;
     height: 52px;
+  }
+}
+
+/* ========================================
+   폼 입력 공통 스타일
+======================================== */
+.form-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  font-size: 15px;
+  border: 1px solid var(--line-100);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa9e;
+  color: var(--gray-700);
+}
+
+.form-input:focus {
+  outline: none;
+    border-color: var(--gray-800);
+  box-shadow: 0px 0px 8px 0px rgba(53, 50, 63, 0.07);
+}
+
+.form-input::placeholder {
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .form-input {
+    height: 48px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   파일 첨부 입력
+======================================== */
+.file-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.file-input-group input[type="file"] {
+  height: auto !important;
+  padding: 8px 14px !important;
+  cursor: pointer;
+}
+
+.file-input-desc {
+  font-size: var(--font-small, 13px);
+  color: var(--gray-500);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ========================================
+   라디오 공통 스타일
+======================================== */
+.form-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-700);
+  user-select: none;
+  padding: 8px 6px;
+}
+
+.radio-label input[type="radio"],
+.tab-radio-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gray-600);
+  border-radius: 50%;
+  flex-shrink: 0;
+  pointer-events: none;
+  position: relative;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"]::after,
+.tab-radio-input::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
+}
+
+.radio-label:not(:has(input[type="radio"]:checked)):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 선택된 상태 */
+.radio-label input[type="radio"]:checked,
+.tab-radio-input:checked {
+  border-color: var(--primary-600);
+}
+
+.radio-label input[type="radio"]:checked::after,
+.tab-radio-input:checked::after {
+  background-color: var(--primary-600);
+}
+
+/* 키보드 포커스 */
+.radio-label:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   신청 폼 테이블
+======================================== */
+.dms-form-table {
+  border-radius: 0 ;
+  border-left: none;
+  border-right: none;
+  border-color: var(--line-100) ;
+  overflow: visible ;
+}
+
+.dms-form-table tbody th {
+  width: 180px ;
+  border-bottom: 1px solid var(--line-100) ;
+}
+
+.dms-form-table tbody td {
+  border-bottom: 1px solid var(--line-100) ;
+  vertical-align: middle ;
+}
+
+.form-input.dms-input {
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+  max-width: 480px;
+  border-color: var(--line-100);
+}
+
+.dms-input:focus {
+  outline: none;
+  border-color: var(--gray-800);
+  box-shadow: 0px 0px 8px 0px rgba(53, 50, 63, 0.07);
+}
+
+.dms-input::placeholder {
+  color: var(--gray-400);
+}
+
+/* ========================================
+   이메일 입력 그룹
+======================================== */
+.email-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-input.dms-input.email-id {
+  max-width: 200px;
+}
+
+.email-at {
+  font-size: var(--font-normal, 15px);
+  color: var(--gray-500);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.dms-select {
+  height: 44px;
+  border: 1px solid var(--line-100);
+  border-radius: 4px;
+  padding: 0 32px 0 12px;
+  font-size: var(--font-normal, 15px);
+  color: var(--gray-700);
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23a9a9a9' d='M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 11px;
+  transition: border-color 0.2s ease;
+  min-width: 172px;
+}
+
+.dms-select:focus {
+  outline: none;
+  border-color: var(--gray-800);
+  box-shadow: 0px 0px 8px 0px rgba(53, 50, 63, 0.07);
+}
+
+.email-domain-direct {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-width: 140px;
+}
+
+.email-domain-direct .dms-input {
+  height: 44px;
+  width: 140px;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+  min-width: 0;
+  max-width: none;
+}
+
+.email-domain-direct .dms-input:focus {
+  outline: none;
+  border-color: var(--line-100);
+  box-shadow: none;
+}
+
+.email-domain-direct:focus-within {
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px 0px rgba(53, 50, 63, 0.07);
+}
+
+.email-domain-direct:focus-within .dms-input,
+.email-domain-direct:focus-within .email-domain-toggle-btn {
+  border-color: var(--gray-800);
+}
+
+.email-domain-toggle-btn {
+  flex-shrink: 0;
+  height: 44px;
+  width: 32px;
+  border: 1px solid var(--line-100);
+  border-radius: 0 4px 4px 0;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23a9a9a9' d='M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0;
+  border-left: 0;
+}
+
+
+/* ========================================
+   주소 입력 그룹
+======================================== */
+.address-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.address-row1,
+.address-row2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.address-main {
+  flex: none;
+  width: 200px;
+  max-width: 200px;
+  min-width: 0;
+}
+
+.address-row2 .address-main,
+.address-detail-sub {
+  flex: 1 1 0% !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+.address-detail-label {
+  font-size: var(--font-normal, 15px);
+  color: var(--gray-500);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ========================================
+   신청인수 입력
+======================================== */
+.count-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count-input {
+  max-width: 200px !important;
+}
+
+.count-unit {
+  font-size: var(--font-normal, 15px);
+  color: var(--gray-600);
+  flex-shrink: 0;
+}
+
+/* ========================================
+   하단 버튼 행
+======================================== */
+.dms-btn-row {
+  margin-top: 32px;
+  padding-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .dms-form-table tbody td {
+    padding: 10px 12px;
+  }
+
+  /* colSpan={2} 섹션 헤더: grid에서 전체 너비 차지 */
+  .dms-form-table .form-section-header {
+    display: block;
+  }
+
+  .dms-form-table .form-section-header th {
+    width: 100%;
+    display: block;
+  }
+
+  .dms-select {
+    width: 100%;
+  }
+
+  .email-domain-direct {
+    width: 100%;
+  }
+
+  .email-domain-direct .dms-input {
+    width: 100%;
+  }
+
+  /* 이메일 그룹: 한 줄 유지, id + @ + 도메인 균등 분배 */
+  .email-input-group {
+    flex-wrap: nowrap;
+  }
+
+  .email-input-group .form-input.dms-input.email-id {
+    flex: 1;
+    width: auto;
+    max-width: unset;
+  }
+
+  .email-input-group .dms-select,
+  .email-input-group .email-domain-direct {
+    flex: 1;
+    width: auto !important;
+    min-width: 0;
+  }
+
+  .form-input.address-main{
+    width: 49%
+  }
+}
+
+@media (max-width: 480px) {
+.dms-form-table{
+  border-bottom: none;
+}
+  .dms-form-table tbody tr {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .dms-form-table tbody th,
+  .dms-form-table tbody td {
+    width: 100% ;
+    display: block;
+  }
+  .dms-form-table tbody td{
+    border-color: #fff;
+    padding: 2px 0px ;
+  }
+  .dms-form-table tbody th {
+    padding: 12px 2px;
+    background-color: var(--bg-100) ;
+    border-bottom: none;
+    padding-bottom: 6px ;
+  }
+
+  .address-row1 .btn-sm{
+            width: calc(50% - 4px);
+  }
+
+  .address-main{
+    max-width: 480px;
+  }
+
+  .address-row2 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+
+  .address-row2 .address-main,
+  .address-detail-sub {
+    flex: unset !important;
+    width: 100% !important;
+  }
+
+  .address-row1, .address-row2{
+    gap: 7px
+  }
+
+  .form-input.dms-input {
+    width: 100%;
+  }
+
+  .form-input.dms-input.email-id {
+    width: 100%;
+    max-width: unset;
+  }
+
+  /* 이메일 그룹: 세로 스택 */
+  .email-input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .email-at {
+    display: none;
+  }
+
+  .email-input-group .form-input.dms-input.email-id {
+    width: 100%;
+    flex: unset;
+  }
+
+  .email-input-group .dms-select,
+  .email-input-group .email-domain-direct {
+    width: 100% !important;
+    flex: unset;
+    min-width: 0;
+  }
+
+  .radio-label input[type="radio"], .tab-radio-input {
+    width: 16px;
+    height: 16px;
   }
 }

@@ -15,6 +15,7 @@ import MainVisual from "../components/sections/MainVisual";
 
 const MainPage = () => {
   useEffect(() => {
+    document.title = "홈 | 서울특별시 환경분쟁조정위원회";
     AOS.init({
       duration: 1000,
       once: true,
@@ -23,13 +24,16 @@ const MainPage = () => {
 
   return (
     <div className="main-page">
+      {/* 건너뛰기 링크 (6.4.1) */}
+      <a href="#main-content" className="skip-nav">본문 바로가기</a>
+
       {/* 마스터헤드 */}
       <Masthead />
 
       {/* 헤더 (GNB 포함) */}
       <Header />
 
-      <main className="fade-in">
+      <main className="fade-in" id="main-content">
         <MainVisual />
         <Search />
         <QuickMenu />

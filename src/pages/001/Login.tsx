@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import SimplePageLayout from "../../components/layout/SimplePageLayout";
 import loginIcon from "../../assets/images/login-icon.png";
 import "./login.css";
 
 const Login = () => {
+  useEffect(() => {
+    document.title = "본인인증 로그인 | 서울특별시 환경분쟁조정위원회";
+  }, []);
+
   // Breadcrumb 데이터
   const breadcrumbItems = [{ label: "홈", url: "/" }, { label: "로그인" }];
 

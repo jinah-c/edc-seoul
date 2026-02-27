@@ -45,6 +45,13 @@
   white-space: nowrap;
 }
 
+.notices-tab:focus-visible{
+  border-radius: 8px;
+}
+.notices-tab.active:focus-visible{
+  border-radius: 0;
+  outline:none;
+}
 .notices-tab:hover {
   color: var(--gray-800);
   border-bottom-color: var(--gray-400);
@@ -71,7 +78,7 @@
   font-weight: 500;
   color: var(--primary-600);
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.5s, outline 0s, outline-offset 0s;
   white-space: nowrap;
   flex-shrink: 0;
   overflow: hidden;
@@ -84,6 +91,11 @@
   /* glass-base-7 */
   box-shadow: -1px -1px 3px 0 rgba(246, 254, 255, 0.6) inset;
   backdrop-filter: blur(3.5px);
+}
+
+.notices-more-btn:focus-visible{
+  border-radius: 40px;
+
 }
 
 .notices-more-btn::after {
@@ -137,6 +149,13 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.notice-card:focus-visible{
+  outline-offset: 4px;
+    border-color: var(--primary-600);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.127);
+  transform: translateY(-4px);
 }
 
 .notice-card:hover {

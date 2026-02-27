@@ -64,6 +64,34 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
+
+a.header-logo:focus-visible{
+  outline-offset: 10px ;
+  border-radius: 1px;
+}
+
+button.lnb-menu-link:focus-visible{
+  outline-offset: -3px ;
+  border-radius: 8px;
+}
+
+button.faq-question:focus-visible{
+  outline-offset: -12px ;
+  border-radius: 18px;
+}
+button.floating-menu-item:focus-visible,
+button.floating-top-btn:focus-visible
+{
+  outline-offset: -5px ;
+  border-radius: 10px;
+}
+
+.tab-button:focus-visible{
+    outline: 2px dotted var(--gray-800);
+    outline-offset: 2px;
+}
+
+
 /* \n 줄바꿈 */
 .faq-answer-text {
   white-space: pre-line;
