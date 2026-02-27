@@ -96,16 +96,6 @@ const Dma03 = () => {
     }
   };
 
-  const processSteps = [
-    { num: 1, label: "접수" },
-    { num: 2, label: "조사관 조정위원 지명" },
-    { num: 3, label: "신청인, 피신청인 통보" },
-    { num: 4, label: "조사관 예비조사" },
-    { num: 5, label: "전문가 현장조사" },
-    { num: 6, label: "심사보고서 작성" },
-    { num: 7, label: "당사자 심문" },
-    { num: 8, label: "결정" },
-  ];
 
   return (
     <SubPageLayout
