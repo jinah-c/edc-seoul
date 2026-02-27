@@ -321,11 +321,17 @@
 }
 
 .inner-tab-btn:hover {
-  background-color: #fff;
+  /* background-color: #fff; */
   color: var(--gray-700);
 }
 
-.inner-tab-btn.active {
+.inner-tab-btn:focus-visible{
+  color: var(--gray-600);
+  /* border-color: var(--primary-500); */
+}
+
+
+.inner-tab-btn.active{
   background-color: #fff;
   color: var(--primary-600);
   border-color: var(--primary-500);
@@ -360,6 +366,7 @@
   .inner-tab-btn {
     padding: 9px 16px;
     font-size: var(--font-small, 13px);
+    min-height: 48px;
   }
 }
 
@@ -1223,7 +1230,7 @@
 
 @media (max-width: 768px) {
   .visit-location-name {
-    font-size: 16px;
+    font-size: 22px;
   }
 
   .visit-process-flow {

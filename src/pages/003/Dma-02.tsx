@@ -113,7 +113,7 @@ const EMAIL_DOMAINS = [
   "kakao.com",
 ];
 
-const Dms02 = () => {
+const Dma02 = () => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [privacyConsent, setPrivacyConsent] = useState<"yes" | "no">("yes");
@@ -649,4 +649,4 @@ const Dms02 = () => {
   );
 };
 
-export default Dms02;
+export default Dma02;

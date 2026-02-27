@@ -18,9 +18,9 @@ const Env01 = () => {
 
   // LNB 메뉴 데이터
   const lnbMenuItems = [
-    { id: "info", label: "제도안내", url: "#" },
-    { id: "cases", label: "분쟁조정사례", url: "#" },
-    { id: "faq", label: "조정신청FAQ", url: "#" },
+    { id: "info", label: "제도안내", url: "/env/info" },
+    { id: "cases", label: "분쟁조정사례", url: "/env/cases" },
+    { id: "faq", label: "조정신청 FAQ", url: "#" },
     { id: "online-counsel", label: "인터넷상담", url: "#" },
     { id: "visit-counsel", label: "방문상담예약", url: "#" },
   ];

@@ -24,7 +24,7 @@ const MainVisual = () => {
       label: "방문 신청",
       subLabel: "신청안내",
       icon: visualCard02,
-      url: "#",
+      url: "/dispute/visit-apply",
     },
   ];
 

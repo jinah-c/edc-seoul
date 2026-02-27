@@ -230,7 +230,7 @@ const Header = () => {
       image: submenuImg01,
       subMenus: [
         { id: 1, label: "제도안내", url: "/env/info" },
-        { id: 2, label: "분쟁조정 사례", url: "#" },
+        { id: 2, label: "분쟁조정 사례", url: "/env/cases" },
         { id: 3, label: "조정신청 FAQ", url: "#" },
         { id: 4, label: "인터넷상담", url: "#" },
         { id: 5, label: "방문상담예약", url: "#" },
@@ -244,7 +244,7 @@ const Header = () => {
       image: submenuImg02,
       subMenus: [
         { id: 1, label: "인터넷신청", url: "/dispute/internet-apply" },
-        { id: 2, label: "방문신청", url: "#" },
+        { id: 2, label: "방문신청", url: "/dispute/visit-apply" },
         { id: 3, label: "수수료계산기", url: "#" },
       ],
     },

@@ -20,11 +20,11 @@ interface MenuItem {
 
 const FloatingMenu = () => {
   const menuItems: MenuItem[] = [
-    { id: 1, title: "분쟁조정안내", icon: icon01, link: "#" },
+    { id: 1, title: "분쟁조정안내", icon: icon01, link: "/edc-seoul/env/info" },
     { id: 2, title: "서식다운로드", icon: icon02, link: "#" },
-    { id: 3, title: "분쟁조정사례", icon: icon03, link: "#" },
+    { id: 3, title: "분쟁조정사례", icon: icon03, link: "/edc-seoul/env/cases" },
     { id: 4, title: "분쟁조정FAQ", icon: icon04, link: "#" },
-    { id: 5, title: "분쟁조정신청", icon: icon05, link: "#" },
+    { id: 5, title: "분쟁조정신청", icon: icon05, link: "/edc-seoul/dispute/internet-apply" },
     { id: 6, title: "수수료계산기", icon: icon06, link: "#" },
     { id: 7, title: "찾아오시는길", icon: icon07, link: "#" },
   ];

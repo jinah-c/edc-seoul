@@ -64,6 +64,15 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
+.table-link:focus-visible{
+  border-radius: 2px;
+}
+
+.file-download-btn:focus-visible{
+  outline-offset: 4px ;
+  border-radius: 2px;
+}
+
 
 a.header-logo:focus-visible{
   outline-offset: 10px ;
