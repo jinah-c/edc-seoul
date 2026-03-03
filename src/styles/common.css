@@ -340,8 +340,8 @@ p span {
 .sub-title {
   font-size: clamp(18px, 0.278vw + 17px, 20px);
   color: var(--gray-700);
+  word-break: keep-all;
 }
-
 
 /* ========================================
    - 타이틀 꾸밈텍스트
@@ -792,10 +792,27 @@ td .txt-list-group {
   color: var(--gray-600);
 }
 
+@media (max-width: 1200px) {
+  .subpage-container {
+    padding: 0 10px;
+  }
+
+  .subpage-inner {
+    padding: 0 16px 80px 16px;
+  }
+}
 /* 모바일 반응형 */
 @media (max-width: 1024px) {
+  .subpage-container {
+    padding: 0 0px;
+  }
+
   .subpage-inner {
     padding: 0 20px 60px;
+  }
+
+  .r-content-wp {
+    max-width: none;
   }
 }
 

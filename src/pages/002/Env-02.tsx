@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import SubPageLayout from "../../components/layout/SubPageLayout";
 import filePdf from "../../assets/images/File-pdf.svg";
 import "./Env.css";
@@ -191,9 +192,9 @@ const Env02 = () => {
                   <td className="tac count">{item.id}</td>
                   <td className="tac">{item.category}</td>
                   <td>
-                    <a href="#" className="table-link oneLine">
+                    <Link to="/env/cases/detail" className="table-link oneLine">
                       {item.title}
-                    </a>
+                    </Link>
                   </td>
                   <td className="tac">{item.date}</td>
                   <td className="tac">
