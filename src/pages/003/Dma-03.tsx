@@ -28,7 +28,11 @@ const Dma03 = () => {
   ];
 
   const lnbMenuItems = [
-    { id: "internet-application", label: "인터넷신청", url: "/dispute/internet-apply" },
+    {
+      id: "internet-application",
+      label: "인터넷신청",
+      url: "/dispute/internet-apply",
+    },
     { id: "visit-application", label: "방문신청", url: "/dispute/visit-apply" },
     { id: "fee-calculator", label: "수수료계산기", url: "#" },
   ];
@@ -44,7 +48,8 @@ const Dma03 = () => {
       id: "writing-example",
       title: "작성 예시",
       titleHighlight: "예시",
-      description: "방문신청서 필요한 분쟁조정신청서 작성 요령을 예시와 함께 안내합니다.",
+      description:
+        "방문신청서 필요한 분쟁조정신청서 작성 요령을 예시와 함께 안내합니다.",
       image: quickItem04,
       onClick: () => setActiveTab("writing-example"),
       ariaLabel: "작성 예시 탭으로 이동",
@@ -96,7 +101,6 @@ const Dma03 = () => {
     }
   };
 
-
   return (
     <SubPageLayout
       breadcrumbItems={breadcrumbItems}
@@ -116,7 +120,9 @@ const Dma03 = () => {
           {tabs.map((tab, index) => (
             <li
               key={tab.id}
-              ref={(el) => { tabRefs.current[index] = el; }}
+              ref={(el) => {
+                tabRefs.current[index] = el;
+              }}
               className={`tab-button ${activeTab === tab.id ? "active" : ""}`}
               onClick={() => setActiveTab(tab.id)}
               onKeyDown={(e) => handleTabKeyDown(e, index)}
@@ -142,13 +148,22 @@ const Dma03 = () => {
             tabIndex={-1}
           >
             {/* 페이지 설명 BOX */}
-            <div className="page-notice" role="region" aria-label="신청안내 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="신청안내 설명"
+            >
               <ul>
                 <li>
-                  <span className="text-accent">서울특별시 관할구역 안</span>에서 발생한 분쟁의 조정업무를 관장합니다.
+                  <span className="text-accent">서울특별시 관할구역 안</span>
+                  에서 발생한 분쟁의 조정업무를 관장합니다.
                   <p className="indentHyphen">
-                    - <span className="text-primary">알선·조정·재정·중재(1억원 이하) 신청사건</span>
-                    (다만,일조방해,통풍방해,조망저해로 인한 분쟁의 재정을 제외합니다.)
+                    -{" "}
+                    <span className="text-primary">
+                      알선·조정·재정·중재(1억원 이하) 신청사건
+                    </span>
+                    (다만,일조방해,통풍방해,조망저해로 인한 분쟁의 재정을
+                    제외합니다.)
                   </p>
                   <p className="indentHyphen">
                     - 국가 또는 지방자치단체를 당사자로 하지 않는 분쟁의 조정
@@ -156,7 +171,8 @@ const Dma03 = () => {
                 </li>
                 <li>
                   서울특별시 환경분쟁조정피해구제위원회를{" "}
-                  <span className="text-accent">방문하여 신청</span>하는 방법을 안내합니다
+                  <span className="text-accent">방문하여 신청</span>하는 방법을
+                  안내합니다
                 </li>
               </ul>
             </div>
@@ -209,14 +225,19 @@ const Dma03 = () => {
             <div className="txt-section">
               <ul className="list-con">
                 <li className="num-li">
-                  1. 신청인은 방문접수 → 신청서다운로드를 통해 신청서를 다운로드 받습니다.
+                  1. 신청인은 방문접수 → 신청서다운로드를 통해 신청서를 다운로드
+                  받습니다.
                 </li>
                 <li className="num-li">
-                  2. 신청인은 작성예시 및 분야별 작성예시를 참조하여 신청서를 작성합니다.
+                  2. 신청인은 작성예시 및 분야별 작성예시를 참조하여 신청서를
+                  작성합니다.
                 </li>
                 <li className="num-li">
-                  3. 환경피해 청구액(조정가액)에 따라 수수료를 납부하고 접수합니다.
-                  <p className="indentHyphen">※ 수수료는 신용카드 및 현금으로 납부가능합니다.</p>
+                  3. 환경피해 청구액(조정가액)에 따라 수수료를 납부하고
+                  접수합니다.
+                  <p className="indentHyphen">
+                    ※ 수수료는 신용카드 및 현금으로 납부가능합니다.
+                  </p>
                 </li>
                 <li className="num-li">
                   4. 접수 후 아래의 순서대로 처리됩니다.
@@ -225,7 +246,10 @@ const Dma03 = () => {
                   <picture className="dmaImg01">
                     <source media="(max-width: 620px)" srcSet={dmaImg03} />
                     <source media="(max-width: 1023px)" srcSet={dmaImg02} />
-                    <img src={dmaImg01} alt="방문신청 처리 절차: 접수 → 조사관 조정위원 지명 → 신청인 피신청인 통보 → 조사관 예비조사 → 전문가 현장조사 → 심사보고서 작성 → 당사자 심문 → 결정" />
+                    <img
+                      src={dmaImg01}
+                      alt="방문신청 처리 절차: 접수 → 조사관 조정위원 지명 → 신청인 피신청인 통보 → 조사관 예비조사 → 전문가 현장조사 → 심사보고서 작성 → 당사자 심문 → 결정"
+                    />
                   </picture>
                 </li>
               </ul>
@@ -243,12 +267,16 @@ const Dma03 = () => {
             ref={contentRef}
             tabIndex={-1}
           >
-            <div className="page-notice" role="region" aria-label="작성예시 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="작성예시 설명"
+            >
               <ul>
                 <li>
                   방문신청서 작성 시 필요한{" "}
-                  <span className="text-accent">분쟁조정신청서 작성 요령</span>을
-                  예시와 함께 안내합니다.
+                  <span className="text-accent">분쟁조정신청서 작성 요령</span>
+                  을 예시와 함께 안내합니다.
                 </li>
               </ul>
             </div>
@@ -269,12 +297,18 @@ const Dma03 = () => {
             ref={contentRef}
             tabIndex={-1}
           >
-            <div className="page-notice" role="region" aria-label="구비서류안내 설명">
+            <div
+              className="page-notice"
+              role="region"
+              aria-label="구비서류안내 설명"
+            >
               <ul>
                 <li>
                   방문신청 시{" "}
-                  <span className="text-accent">신청서와 함께 제출해야 하는 서류</span>를
-                  안내합니다.
+                  <span className="text-accent">
+                    신청서와 함께 제출해야 하는 서류
+                  </span>
+                  를 안내합니다.
                 </li>
               </ul>
             </div>

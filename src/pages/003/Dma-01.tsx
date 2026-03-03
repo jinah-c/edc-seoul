@@ -80,7 +80,11 @@ const Dma01 = () => {
 
   // LNB 메뉴 데이터
   const lnbMenuItems = [
-    { id: "internet-application", label: "인터넷신청", url: "/dispute/internet-apply" },
+    {
+      id: "internet-application",
+      label: "인터넷신청",
+      url: "/dispute/internet-apply",
+    },
     { id: "visit-application", label: "방문신청", url: "/dispute/visit-apply" },
     { id: "fee-calculator", label: "수수료계산기", url: "#" },
   ];
@@ -1429,7 +1433,10 @@ const Dma01 = () => {
             <section className="application-types-section">
               <ul className="application-types-list">
                 <li className="application-type-card">
-                  <a href="/edc-seoul/dispute/internet-apply/alson" className="card-link">
+                  <a
+                    href="/edc-seoul/dispute/internet-apply/alson"
+                    className="card-link"
+                  >
                     <div className="card-header">
                       <h3 className="mtit">
                         알선신청
